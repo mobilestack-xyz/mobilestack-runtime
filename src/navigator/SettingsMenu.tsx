@@ -99,7 +99,7 @@ export default function SettingsMenu() {
   }
 
   const getDevSettingsComp = () => {
-    if (devModeActive) {
+    if (!devModeActive) {
       return null
     } else {
       return (
