@@ -1,4 +1,4 @@
-package org.celo.mobile;
+package org.mobilestack.mobile;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -28,7 +28,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "celo";
+    return "mobilestack";
   }
 
   /**

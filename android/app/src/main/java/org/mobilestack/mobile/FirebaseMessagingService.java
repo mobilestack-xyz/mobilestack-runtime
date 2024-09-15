@@ -1,4 +1,4 @@
-package org.celo.mobile;
+package org.mobilestack.mobile;
 
 import android.os.Bundle;
 import android.util.Log;
