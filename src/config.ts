@@ -229,3 +229,5 @@ export const ENABLED_QUICK_ACTIONS = (
   ) as HomeActionName[]
 
 export const FETCH_FIATCONNECT_QUOTES = true
+
+export const HOME_WEBVIEW_URI: string | undefined = 'https://app.ubeswap.org/'

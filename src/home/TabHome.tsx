@@ -7,7 +7,12 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { showMessage } from 'src/alert/actions'
 import { AppState } from 'src/app/actions'
 import { appStateSelector, phoneNumberVerifiedSelector } from 'src/app/selectors'
-import { ALERT_BANNER_DURATION, DEFAULT_TESTNET, SHOW_TESTNET_BANNER } from 'src/config'
+import {
+  ALERT_BANNER_DURATION,
+  DEFAULT_TESTNET,
+  SHOW_TESTNET_BANNER,
+  HOME_WEBVIEW_URI,
+} from 'src/config'
 import { refreshAllBalances, visitHome } from 'src/home/actions'
 import { importContacts } from 'src/identity/actions'
 import { Screens } from 'src/navigator/Screens'
@@ -16,6 +21,7 @@ import { phoneRecipientCacheSelector } from 'src/recipients/reducer'
 import { useDispatch, useSelector } from 'src/redux/hooks'
 import { initializeSentryUserContext } from 'src/sentry/actions'
 import { hasGrantedContactsPermission } from 'src/utils/contacts'
+import InlineWebView from 'src/webview/InlineWebView'
 
 type Props = NativeStackScreenProps<StackParamList, Screens.TabHome>
 
@@ -74,7 +80,11 @@ function TabHome(_props: Props) {
     }
   }, [appState])
 
-  return <SafeAreaView testID="WalletHome" style={styles.container} edges={[]}></SafeAreaView>
+  return (
+    <SafeAreaView testID="WalletHome" style={styles.container} edges={[]}>
+      {!!HOME_WEBVIEW_URI && <InlineWebView uri={HOME_WEBVIEW_URI} />}
+    </SafeAreaView>
+  )
 }
 
 const styles = StyleSheet.create({
