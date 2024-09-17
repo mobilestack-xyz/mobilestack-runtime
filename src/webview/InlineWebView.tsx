@@ -1,5 +1,5 @@
 import { useHeaderHeight } from '@react-navigation/elements'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   ActionSheetIOS,
@@ -11,18 +11,16 @@ import {
 } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ShouldStartLoadRequest } from 'react-native-webview/lib/WebViewTypes'
-import { DappExplorerEvents, WebViewEvents } from 'src/analytics/Events'
+import { WebViewEvents } from 'src/analytics/Events'
 import AppAnalytics from 'src/analytics/AppAnalytics'
 import { openDeepLink } from 'src/app/actions'
 import Touchable from 'src/components/Touchable'
 import WebView, { WebViewRef } from 'src/components/WebView'
-import { activeDappSelector } from 'src/dapps/selectors'
-import { dappSessionEnded } from 'src/dapps/slice'
 import BackChevron from 'src/icons/BackChevron'
 import ForwardChevron from 'src/icons/ForwardChevron'
 import Refresh from 'src/icons/Refresh'
 import TripleDotVertical from 'src/icons/TripleDotVertical'
-import { useDispatch, useSelector } from 'src/redux/hooks'
+import { useDispatch } from 'src/redux/hooks'
 import { getDynamicConfigParams } from 'src/statsig'
 import { DynamicConfigs } from 'src/statsig/constants'
 import { StatsigDynamicConfigs } from 'src/statsig/types'
@@ -41,7 +39,6 @@ function InlineWebView({ uri }: Props) {
   const dispatch = useDispatch()
   const { t } = useTranslation()
   const headerHeight = useHeaderHeight()
-  const activeDapp = useSelector(activeDappSelector)
 
   const disabledMediaPlaybackRequiresUserActionOrigins = getDynamicConfigParams(
     DynamicConfigs[StatsigDynamicConfigs.DAPP_WEBVIEW_CONFIG]
@@ -52,25 +49,6 @@ function InlineWebView({ uri }: Props) {
   const [canGoForward, setCanGoForward] = useState(false)
   const [showingBottomSheet, setShowingBottomSheet] = useState(false)
   const [currentUrl, setCurrentUrl] = useState('')
-
-  useEffect(() => {
-    return () => {
-      // end the active dapp session when the screen is unmounted (e.g. screen
-      // dismissed via header close button or via gesture/device back button)
-      // note that the dependency array is empty so the values used here are
-      // captured on screen mount, which works for now but may need to be
-      // refreshed in the future
-      if (activeDapp) {
-        dispatch(dappSessionEnded())
-        AppAnalytics.track(DappExplorerEvents.dapp_close, {
-          categories: activeDapp.categories,
-          dappId: activeDapp.id,
-          dappName: activeDapp.name,
-          section: activeDapp.openedFrom,
-        })
-      }
-    }
-  }, [])
 
   const handleLoadRequest = (event: ShouldStartLoadRequest): boolean => {
     if (event.url.startsWith(`${DEEPLINK_PREFIX}://`) || isWalletConnectDeepLink(event.url)) {
@@ -146,7 +124,7 @@ function InlineWebView({ uri }: Props) {
             setCurrentUrl(navState.url)
           }}
           mediaPlaybackRequiresUserAction={mediaPlaybackRequiresUserAction}
-          testID={activeDapp ? `WebViewScreen/${activeDapp.name}` : 'RNWebView'}
+          testID={'InlineWebView'}
         />
       </KeyboardAvoidingView>
       {Platform.OS === 'android' && (
