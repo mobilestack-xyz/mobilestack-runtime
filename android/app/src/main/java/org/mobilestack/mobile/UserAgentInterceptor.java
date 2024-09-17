@@ -1,4 +1,4 @@
-package org.celo.mobile;
+package org.mobilestack.mobile;
 
 import android.os.Build;
 import java.io.IOException;
@@ -20,7 +20,7 @@ public class UserAgentInterceptor implements Interceptor {
         "User-Agent",
         // Format we want: Valora/1.0.0 (Android 12; Pixel 5)
         String.format(
-          "Valora/%s (Android %s; %s)",
+          "MobileStack/%s (Android %s; %s)",
           BuildConfig.VERSION_NAME,
           Build.VERSION.RELEASE,
           Build.MODEL
