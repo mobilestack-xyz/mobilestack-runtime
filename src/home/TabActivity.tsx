@@ -66,12 +66,13 @@ function TabActivity(_props: Props) {
         refreshControl={refresh}
         onRefresh={onRefresh}
         refreshing={isLoading}
-        // set height so that the list scrolls correctly when the content is
-        // smaller than the screen.
-        contentContainerStyle={{ marginBottom: insets.bottom }}
+        contentContainerStyle={{ paddingBottom: insets.bottom }}
         sections={sections}
         keyExtractor={keyExtractor}
         testID="WalletHome/SectionList"
+        // without height, pull down to refresh hides content if the content is
+        // smaller than the screen height
+        style={{ height: '100%' }}
       />
     </SafeAreaView>
   )
