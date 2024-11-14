@@ -111,9 +111,10 @@ In case something went wrong with the sync, (e.g., fork is still behind base
 repo, used squash and merge instead of merge commit, etc.), you can rewrite git
 commit history to clean bad merges.
 
-> 🚨 This involves force pushes so be
-> careful when doing this. Get help from the engineering team if you're unsure of
-> this. 🚨
+> 🚨 This involves force pushes so be extra careful when doing this. Only
+> attempt to do this if the sync is the latest commit and there are no new
+> additional commits on top of it. Get help from the engineering team if you're
+> unsure of any of this. 🚨
 
 ### Reset local main to backup main
 
