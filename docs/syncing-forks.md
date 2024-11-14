@@ -1,6 +1,6 @@
 # Syncing Forks
 
-Periodically you'd need to sync forked repos with the base repo(either pulling
+Periodically you'd need to sync forked repos with the base repo (either pulling
 in changes from Valora into mobilestack-runtime or from mobilestack-runtime to another mobile
 stack app). There are multiple ways to do it, the below documents one way that
 helps maintaining commit history and makes pulling future changes easier.
@@ -19,7 +19,7 @@ $ git clone git@github.com:mobilestack-xyz/mobilestack-runtime.git
 On the root of the forked repository
 
 ```console
-# if pulling changes from Valora to MS run time
+# if pulling changes from Valora to MS runtime
 $ git remote add upstream git@github.com:valora-inc/wallet.git
 
 # if pulling MS runtime into another MS app
