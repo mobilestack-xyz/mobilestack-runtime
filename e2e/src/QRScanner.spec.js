@@ -1,5 +1,5 @@
 import { reloadReactNative } from './utils/retries'
-import { quickOnboarding, waitForElementId } from './utils/utils'
+import { quickOnboarding, waitForElementByIdAndTap, waitForElementId } from './utils/utils'
 
 describe('Given QR Scanner', () => {
   beforeAll(async () => {
