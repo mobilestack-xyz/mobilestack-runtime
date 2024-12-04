@@ -10,7 +10,8 @@ type Props = {} & WithTranslation
 const LICENSE_SOURCE = Platform.select({
   // `require` only works on iOS with WebView, it breaks on Android when using a release bundle
   // See https://github.com/react-native-community/react-native-webview/issues/428
-  ios: require('./LicenseDisclaimer.txt'),
+  // Tweak to avoid custom metro config for now
+  ios: { uri: 'http://example.com/' }, //require('./LicenseDisclaimer.txt'),
   // Hence on Android we directly reference the asset (copied during postinstall)
   android: { uri: 'file:///android_asset/custom/LicenseDisclaimer.txt' },
 })
