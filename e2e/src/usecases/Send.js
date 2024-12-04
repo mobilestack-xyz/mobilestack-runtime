@@ -23,6 +23,7 @@ export default Send = () => {
   describe('When multi-token send flow to address', () => {
     beforeAll(async () => {
       await launchApp()
+      await waitForElementByIdAndTap('Tab/Wallet')
     })
 
     it('Then should navigate to send search input from home action', async () => {
@@ -49,13 +50,13 @@ export default Send = () => {
 
     it('Then should be able to change token', async () => {
       await element(by.id('SendEnterAmount/TokenSelect')).tap()
-      await element(by.id('CELOSymbol')).tap()
+      await element(by.id('BottomSheetCELOSymbol')).tap()
       await expect(element(by.text('CELO on Celo')).atIndex(0)).toBeVisible()
       await element(by.id('SendEnterAmount/TokenSelect')).tap()
-      await element(by.id('cUSDSymbol')).tap()
+      await element(by.id('BottomSheetcUSDSymbol')).tap()
       await expect(element(by.text('cUSD on Celo')).atIndex(0)).toBeVisible()
       await element(by.id('SendEnterAmount/TokenSelect')).tap()
-      await element(by.id('cEURSymbol')).tap()
+      await element(by.id('BottomSheetcEURSymbol')).tap()
       await expect(element(by.text('cEUR on Celo')).atIndex(0)).toBeVisible()
     })
 
@@ -112,7 +113,7 @@ export default Send = () => {
 
     it('Then should be able to choose token', async () => {
       await element(by.id('SendEnterAmount/TokenSelect')).tap()
-      await element(by.id('cEURSymbol')).tap()
+      await element(by.id('BottomSheetcEURSymbol')).tap()
       await expect(element(by.text('cEUR on Celo')).atIndex(0)).toBeVisible()
     })
 
