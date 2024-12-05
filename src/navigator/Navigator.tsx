@@ -6,7 +6,7 @@ import {
 import { createBottomSheetNavigator } from '@th3rdwave/react-navigation-bottom-sheet'
 import * as React from 'react'
 import { Platform } from 'react-native'
-import SplashScreen from 'react-native-splash-screen'
+// import SplashScreen from 'react-native-splash-screen'
 import AccountKeyEducation from 'src/account/AccountKeyEducation'
 import AccounSetupFailureScreen from 'src/account/AccountSetupFailureScreen'
 import GoldEducation from 'src/account/GoldEducation'
@@ -648,7 +648,7 @@ function MainStackScreen() {
     Logger.info(`${TAG}@MainStackScreen`, `Initial route: ${initialRoute}`)
 
     // Wait for next frame to avoid slight gap when hiding the splash
-    requestAnimationFrame(() => SplashScreen.hide())
+    // requestAnimationFrame(() => SplashScreen.hide())
   }, [])
 
   if (!initialRouteName) {
