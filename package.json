@@ -127,6 +127,7 @@
     "react-native-shake": "5.5.2",
     "react-native-share": "^11.0.3",
     "react-native-simple-toast": "^3.3.1",
+    "react-native-sms-retriever": "^1.1.1",
     "react-native-svg": "^15.7.1",
     "react-native-video": "^6.6.4",
     "react-native-webview": "^13.12.3"
@@ -174,7 +175,6 @@
     "react-native-platform-touchable": "^1.1.1",
     "react-native-qrcode-svg": "^6.3.2",
     "react-native-skeleton-placeholder": "^5.2.4",
-    "react-native-sms-retriever": "^1.1.1",
     "react-native-tab-view": "^3.5.2",
     "react-native-url-polyfill": "^2.0.0",
     "react-redux": "^9.1.2",
