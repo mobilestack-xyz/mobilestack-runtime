@@ -386,6 +386,7 @@
   "accountAddressLabel": "Endereço de Conta",
   "celoAmountLabel": "Quantia (CELO)",
   "maxSymbol": "Máx.",
+  "percentage": "{{percentage}}%",
   "withdrawCeloReview": "Revisar",
   "withdrawCeloTo": "Para",
   "withdrawCeloAmount": "Quantia (CELO)",
@@ -695,8 +696,8 @@
     "body": "Depois que seu amigo configurar a carteira dele e conectar o seu número de celular, vocês receberão um NFT."
   },
   "inviteRewardsBannerCUSD": {
-    "title": "Convide amigos e ganhe até 12 cUSD",
-    "body": "Depois que a pessoa conectar seu número e adicionar fundos à {{appName}}, vocês dois receberão 0,50 cUSD."
+    "title": "Indique um amigo e ganhe USDT",
+    "body": "Depois que a pessoa conectar seu número à {{appName}}, vocês dois receberão 1 USDT."
   },
   "inviteWithUrl": {
     "title": "Convide um amigo",
@@ -704,14 +705,14 @@
     "button": "Enviar convite",
     "error": "Ocorreu um erro ao criar um link compartilhável",
     "share": "Oi! Inscreva-se na carteira {{appName}}. Com ela, eu aumento minhas economias em USD e cripto. Você só precisa de um número de celular para configurá-la em segundos. Não deixe de se inscrever com meu link de indicação aqui: {{shareUrl}}.",
-    "help": "Para receber essa recompensa, o convidado deve fazer o download por meio do link de indicação, conectar o número de celular, adicionar fundos e mantê-los em sua carteira {{appName}} por 7 dias. <0>Exibir todos os termos</0>",
+    "help": "Para receber essa recompensa, o convidado deve fazer o download por meio do link de indicação e conectar o número de celular para sua carteira {{appName}}. <0>Exibir todos os termos</0>",
     "rewardsActive": {
       "title": "Convide amigos e colete NFTs",
       "body": "Convide seus amigos e familiares para baixar o app {{appName}} e cada um de vocês ganhará um NFT exclusivo"
     },
     "rewardsActiveCUSD": {
-      "title": "GANHE ATÉ 12 cUSD convidando seus amigos para a {{appName}}!",
-      "body": "Ganhe 0,50 cUSD para cada amigo que você convidar para a {{appName}}. Quando seu amigo conectar seu número, adicionar fundos e os mantiver por 7 dias, vocês dois receberão 0,50 cUSD. Corra, pois os fundos são limitados! (Limite de 25 amigos)."
+      "title": "Indique um amigo para {{appName}} e ganhe USDT",
+      "body": "A única coisa que seu amigo precisa fazer é baixar a Valora usando seu link e conectar seu número de telefone para vocês dois receber 1 USDT. Corra, pois os fundos são limitados!"
     }
   },
   "getReward": "Receba ${{reward}}",
@@ -1058,7 +1059,7 @@
   "inviteWithoutPayment": "Olá! Estou usando a {{appName}} para enviar cripto para o mundo inteiro. É muito fácil de usar e eu gostaria de convidar você para conferir com este link: {{link}}",
   "inviteWithEscrowedPayment": "Olá! Estou usando a {{appName}} para enviar cripto para o mundo inteiro. Acabei de enviar {{amount}} {{token}} para você. Instale o aplicativo da {{appName}} e resgate seus {{token}} usando este link: {{link}}",
   "inviteWithRewards": "Oi! 👋 Estou usando a {{appName}} como minha carteira cripto. É super rápido baixar o app e conectar seu número de celular — além disso, nós dois receberemos um NFT de edição especial como recompensa. 💫 \n\nUse este link para baixar: {{link}}",
-  "inviteWithRewardsCUSD": "Oi! Nós dois podemos receber uma recompensa gratuita de US$ 0,50 se você se inscrever, conectar seu número e depositar fundos na sua carteira da {{appName}}. Com ela, eu aumento minhas economias em USD e cripto. Você só precisa de um número de celular para configurá-la em segundos. Não deixe de se inscrever com meu link de indicação aqui: \n\n{{link}} \n\nCorra, pois a promoção de indicação termina em breve.",
+  "inviteWithRewardsCUSD": "Oi! Nós dois podemos receber uma recompensa gratuita de 1 USDT se você se inscrever e conectar seu número de celular para {{appName}}. Não deixe de se inscrever com meu link de indicação aqui: \n\n{{link}} \n\nCorra, pois a promoção de indicação termina em breve.",
   "loadingContacts": "Encontrar seus contatos",
   "myCode": "Meu código",
   "scanCode": "Escanear",
@@ -1458,14 +1459,15 @@
   "dappsScreen": {
     "title": "Dapps",
     "titleDiscover": "Descobrir",
-    "exploreDapps": "Explorar dapps",
-    "exploreAll": "Explorar todos",
+    "exploreDapps": "Dapps",
+    "exploreAll": "Ver todos",
     "message": "Explore formas de usar seus ativos",
     "errorMessage": "Ocorreu um erro ao carregar os dapps",
     "featuredDapp": "Em destaque",
     "allDapps": "Todos",
     "favoriteDapps": "Meus favoritos",
     "mostPopularDapps": "Mais populares",
+    "mostPopularDapps_UK": "Outros Dapps",
     "favoriteDappsAndAll": "Meus favoritos e todos",
     "searchPlaceHolder": "Pesquisar dapps",
     "noFavorites": {
@@ -1481,7 +1483,8 @@
       "message": "Filtro <0>{{filter}}</0> aplicado",
       "removeFilter": "Remover filtro",
       "searchMessage": "Nenhum resultado correspondente encontrado para <0>\"{{searchTerm}}\"</0>"
-    }
+    },
+    "disclaimer_UK": "Esta é uma lista de Dapps de terceiros. A descrição de cada Dapp é puramente informativa e não é um convite para usá-los."
   },
   "dappRankings": {
     "title": "Ranking de dapps",
@@ -1982,8 +1985,8 @@
       "body": "Parece que {{contactName}} não está no app {{appName}}. Você ainda pode enviar um pagamento a essa pessoa se souber o endereço da carteira dela ou, em vez disso, enviar um convite.\n\nDepois que seu amigo baixar a carteira e conectar o número de celular, vocês dois receberão um NFT exclusivo."
     },
     "rewardsActiveCUSD": {
-      "title": "Convide {{contactName}} para a {{appName}} e receba 0,50 cUSD",
-      "body": "Parece que {{contactName}} não está na {{appName}}. Você ainda pode enviar um pagamento para essa pessoa se souber o endereço da carteira dela ou, em vez disso, enviar um convite. \n\n Após ela baixar a {{appName}}, conectar o número de celular, adicionar fundos e mantê-los na sua carteira por 7 dias, vocês dois receberão 0,50 cUSD enquanto durarem os fundos."
+      "title": "Indique {{contactName}} para a {{appName}} e ganhe USDT",
+      "body": "Parece que {{contactName}} não está na {{appName}}. Você ainda pode enviar um pagamento para essa pessoa se souber o endereço da carteira dela ou, em vez disso, enviar um convite. \n\nApós seu amigo baixar a {{appName}} e conectar o número de celular, vocês dois receberão 1 USDT enquanto durarem os fundos."
     }
   },
   "celoNews": {
@@ -2123,18 +2126,22 @@
   },
   "sendSelectRecipient": {
     "searchText": "Pesquise por endereço de carteira",
+    "searchInputLabel": "Para",
+    "searchInputPlaceholder": "Endereço da carteira ou número de celular",
     "paste": "Colar da área de transferência",
     "title": "Selecione um destinatário",
     "contactsTitle": "Selecione um contato",
+    "header": "Enviar",
+    "contactsHeader": "Enviar para contatos",
     "recents": "Recentes",
     "results": "Resultados",
     "qr": {
-      "title": "Escanear ou mostrar o código QR",
-      "subtitle": "Encontre endereços rapidamente na {{appName}}"
+      "title": "Enviar via código QR",
+      "subtitle": "Toque para ler ou mostrar um endereço"
     },
     "invite": {
-      "title": "Envie criptos para seus amigos",
-      "subtitle": "Envie fundos ou um convite para seus contatos"
+      "title": "Enviar para um contato",
+      "subtitle": "Envie fundos para seus contatos"
     },
     "jumpstart": {
       "title": "Envie com um link ativo",
@@ -2199,6 +2206,7 @@
     "title": "Insira o valor",
     "selectToken": "Selecione um token",
     "networkFee": "Taxa da rede {{networkName}}",
+    "networkFeeV1_97": "Taxa de rede",
     "lowerAmount": "Insira uma quantia menor",
     "maxAmountWarning": {
       "title": "Enviando a quantia máxima",
@@ -2280,7 +2288,40 @@
     "infiniteApprovalDescription": "{{tokenSymbol}} infinito aprovado para negociação",
     "revokeApprovalDescription": "{{tokenSymbol}} revogado para negociação",
     "descriptionLabel": "Detalhes",
-    "crossChainSwapTransactionLabel": "Cadeia cruzada"
+    "crossChainSwapTransactionLabel": "Cadeia cruzada",
+    "depositTitle": "Depositado",
+    "depositSubtitle": "para o pool da {{txAppName}}",
+    "depositSubtitle_noTxAppName": "para um app desconhecido",
+    "withdrawTitle": "Sacado",
+    "withdrawSubtitle": "do pool da {{txAppName}}",
+    "withdrawSubtitle_noTxAppName": "de um app desconhecido",
+    "claimRewardTitle": "Recebido",
+    "claimRewardSubtitle": "do pool da {{txAppName}}",
+    "claimRewardSubtitle_noTxAppName": "de um app desconhecido",
+    "allTransactionsShown": "Você chegou ao final do seu histórico de transações.",
+    "fetchErrorRetry": "Tentar novamente",
+    "error": {
+      "fetchError": "Opa, houve um problema ao atualizar seu feed. Seu histórico de transações pode estar incompleto no momento."
+    },
+    "noTransactions": "Parabéns, você criou com sucesso uma carteira {{appName}}!"
+  },
+  "transactionDetails": {
+    "descriptionLabel": "Detalhes",
+    "depositTitle": "Depositado",
+    "depositSubtitle": "{{tokenSymbol}} depositado para o pool da {{txAppName}}",
+    "depositSubtitle_noTxAppName": "{{tokenSymbol}} depositado para um app desconhecido",
+    "depositDetails": "Quantia depositada",
+    "withdrawTitle": "Sacado",
+    "withdrawSubtitle": "{{tokenSymbol}} sacado do pool da {{txAppName}}",
+    "withdrawSubtitle_noTxAppName": "{{tokenSymbol}} sacado de um app desconhecido",
+    "withdrawDetails": "Quantia retirada",
+    "claimRewardTitle": "Recebido",
+    "claimRewardSubtitle": "{{tokenSymbol}} recebido do pool da {{txAppName}}",
+    "claimRewardSubtitle_noTxAppName": "{{tokenSymbol}} recebido de um app desconhecido",
+    "claimRewardDetails": "Quantia recebida",
+    "swap": "Trocar",
+    "network": "Rede",
+    "fees": "Taxas"
   },
   "multichainBeta": {
     "beta": "BETA",
@@ -2548,7 +2589,8 @@
     "entrypoint": {
       "title": "Ganhe com suas criptos",
       "subtitle": "Deposite e ganhe",
-      "description": "Ganhe em suas criptos por um pool de liquidez."
+      "description": "Ganhe emprestando seus ativos cripto em pools de liquidez.",
+      "totalDepositAndEarnings": "Total de depósitos e ganhos"
     },
     "enterAmount": {
       "title": "Quanto gostaria de depositar?",
@@ -2557,7 +2599,7 @@
       "fees": "Taxas",
       "available": "Disponível",
       "swap": "Trocar",
-      "claimingReward": "Reivindicação de prêmio",
+      "claimingReward": "Resgatar recompensas",
       "earnUpToLabel": "Você pode ganhar até:",
       "rateLabel": "Taxa (est.)",
       "earnUpTo": "~{{fiatSymbol}}{{amount}}/ano",
@@ -2589,8 +2631,8 @@
         "swapDescription": "Para depositar fundos no pool, seu token está sendo trocado por um token do pool."
       },
       "withdrawingAndClaimingCard": {
-        "title": "Retirada e reivindicação",
-        "description": "{{providerName}} exige que você reivindique todas as recompensas disponíveis sempre que fizer um saque."
+        "title": "Saque e resgate",
+        "description": "{{providerName}} exige que você resgate todas as recompensas disponíveis sempre que fizer um saque."
       }
     },
     "activePools": {
@@ -2624,12 +2666,19 @@
     },
     "collect": {
       "title": "Parabéns! Revise e receba seus ganhos",
+      "titleClaim": "Você vai resgatar:",
+      "titleCollect": "Você vai receber:",
+      "titleWithdraw": "Você vai sacar:",
       "total": "TOTAL",
       "plus": "MAIS",
+      "reward": "RECOMPENSA",
       "rate": "Taxa (est.)",
       "apy": "{{apy}}% de APY",
       "fee": "Taxa de gas",
       "cta": "Receber ganhos",
+      "ctaWithdraw": "Sacar",
+      "ctaReward": "Resgatar recompensa",
+      "ctaExit": "Sair do pool",
       "errorTitle": "Algo deu errado",
       "errorDescription": "Não foi possível obter os detalhes do depósito. Tente novamente.",
       "noGasTitle": "Você precisa de mais {{symbol}} para continuar",
@@ -2713,19 +2762,19 @@
       "depositAndEarnings": "Depósitos e ganhos",
       "withdraw": "Sacar",
       "withdrawBottomSheet": {
-        "title": "Selecione o tipo de retirada",
-        "withdrawAndClaim": "Retirada e reivindicação",
-        "withdrawDescription": "Retirar um valor específico de quaisquer tokens que você tenha depositado no pool",
-        "withdrawAndClaimRewardsDescription": "Retire um valor específico de quaisquer tokens que você tenha depositado no pool e receba suas recompensas automaticamente",
-        "withdrawAndClaimEarningsDescription": "Retire um valor específico de quaisquer tokens que você tenha depositado no pool e reivindique seus ganhos automaticamente",
+        "title": "Selecione o tipo de saque",
+        "withdrawAndClaim": "Saque e resgate",
+        "withdrawDescription": "Saque um valor específico de qualquer token que você tenha depositado no pool",
+        "withdrawAndClaimRewardsDescription": "Saque um valor específico de qualquer token que você tenha depositado no pool e resgate suas recompensas automaticamente",
+        "withdrawAndClaimEarningsDescription": "Saque um valor específico de qualquer token que você tenha depositado no pool e resgate seus ganhos automaticamente",
         "claimRewards": "Resgatar recompensas",
-        "claimRewardsDescription": "Solicite suas recompensas. Você não pode reivindicar valores parciais do prêmio",
-        "claimEarnings": "Ganhos de reclamações",
-        "claimEarningsDescription": "Solicite os ganhos de seu depósito. Não é possível reivindicar valores parciais",
+        "claimRewardsDescription": "Resgate suas recompensas. Você não pode resgatar valores parciais das recompensas",
+        "claimEarnings": "Resgatar ganhos",
+        "claimEarningsDescription": "Resgate os ganhos no seu depósito. Valores parciais não podem ser resgatados",
         "exit": "Sair",
-        "exitDescription": "A saída retirará tudo o que você tem na piscina",
-        "exitWithRewardsDescription": "A saída retirará tudo o que você tem na piscina, inclusive as recompensas",
-        "exitWithEarningsDescription": "A saída retirará tudo o que você tem no pool, inclusive os ganhos"
+        "exitDescription": "Sair irá sacar tudo que você tem no pool",
+        "exitWithRewardsDescription": "Sair irá sacar tudo que você tem no pool, incluindo recompensas",
+        "exitWithEarningsDescription": "Sair irá sacar tudo que você tem no pool, inclusive ganhos"
       },
       "totalDepositAndEarnings": "Total de depósitos e ganhos",
       "titleLocalAmountDisplay": "{{localCurrencySymbol}}{{localCurrencyAmount}}",
@@ -2741,10 +2790,10 @@
         "yieldRateTitle": "Taxa de rendimento",
         "yieldRateDescription": "Embora a maioria dos pools ofereça ganhos na forma de um token de pool de liquidez, alguns oferecem tokens adicionais como recompensa ou incentivo adicional.\n\nComo a {{appName}} agrega pools em vários protocolos, combinamos todas as taxas de ganhos e recompensas em uma única taxa de rendimento geral para ajudar você a avaliar facilmente seu potencial de ganhos. Esse número é uma estimativa, pois os valores de ganhos e recompensas flutuam constantemente.\n\nPara obter mais informações sobre a detalhamento dos ganhos, acesse <0>{{providerName}}</0>.",
         "dailyYieldRateTitle": "Taxa diária",
-        "dailyYieldRateDescription": "A tarifa diária exibida reflete a tarifa diária fornecida pelo site {{providerName}}.",
-        "dailyYieldRateLink": "Veja mais detalhes sobre a tarifa diária em {{providerName}}",
+        "dailyYieldRateDescription": "A taxa diária exibida é a taxa diária fornecida por {{providerName}}.",
+        "dailyYieldRateLink": "Veja mais detalhes sobre a taxa diária em {{providerName}}",
         "safetyScoreTitle": "Pontuação de segurança",
-        "safetyScoreDescription": "A pontuação de segurança divide a segurança do ativo subjacente do cofre em vários fatores-chave. O objetivo é chamar sua atenção para os riscos a serem considerados antes de investir e informá-lo sobre detalhes técnicos que você talvez não consiga avaliar por si mesmo.\nEmbora a posição completa seja sempre mais complicada, a pontuação de segurança é fornecida para simplificar as principais considerações de risco e segurança e dar início à sua própria diligência prévia. Nossa equipe considera cuidadosamente cada fator antes da implantação de um cofre e mantém um olhar atento sobre cada ativo, cadeia e protocolo que o {{providerName}} integrou.",
+        "safetyScoreDescription": "A Pontuação de segurança detalha a segurança do ativo base do cofre em vários fatores-chave. Ele tem como objetivo chamar sua atenção para os riscos a serem considerados antes de investir e fornecer informações sobre detalhes técnicos que você talvez não consiga avaliar por conta própria.\nEmbora a posição completa seja sempre mais complexa, a Pontuação de segurança é disponibilizada para simplificar as principais considerações de risco e segurança e estimular sua própria análise criteriosa. Nossa equipe avalia cuidadosamente cada fator antes que um cofre seja implementado e mantém uma vigilância atenta sobre cada ativo, rede e protocolo que {{providerName}} integrou.",
         "safetyScoreRateLink": "Veja mais detalhes sobre a pontuação de segurança em {{providerName}}"
       },
       "viewMoreDetails": "Ver mais detalhes",
@@ -2783,6 +2832,11 @@
   "duration_year_other": "{{count}} anos",
   "duration_yearMonth_one": "1 ano, 1 mês",
   "duration_yearMonth_other": "{{count}} anos, {{count2}} meses",
+  "tokenEnterAmount": {
+    "availableBalance": "Disponível: <0></0>",
+    "selectToken": "Selecionar token",
+    "fiatPriceUnavailable": "Preço indisponível"
+  },
   "celoDollarAmount": "<0></0> Celo Dollar",
   "celoDollarAmount_plural": "<0></0> Celo Dollars"
 }

@@ -27,9 +27,13 @@ import { navigateToPhoneSettings } from 'src/utils/linking'
 
 type Props = {
   onContactsPermissionGranted: () => void
+  defaultTokenIdOverride?: string
 }
 
-export default function SelectRecipientButtons({ onContactsPermissionGranted }: Props) {
+export default function SelectRecipientButtons({
+  onContactsPermissionGranted,
+  defaultTokenIdOverride,
+}: Props) {
   const { t } = useTranslation()
 
   const phoneNumberVerified = useSelector(phoneNumberVerifiedSelector)
@@ -114,7 +118,7 @@ export default function SelectRecipientButtons({ onContactsPermissionGranted }: 
 
   const onPressQR = () => {
     AppAnalytics.track(SendEvents.send_select_recipient_scan_qr)
-    navigate(Screens.QRNavigator, { screen: Screens.QRScanner })
+    navigate(Screens.QRNavigator, { screen: Screens.QRScanner, params: { defaultTokenIdOverride } })
   }
 
   const onPressConnectPhoneNumber = () => {
@@ -165,6 +169,7 @@ export default function SelectRecipientButtons({ onContactsPermissionGranted }: 
           subtitle={t('sendSelectRecipient.jumpstart.subtitle')}
           onPress={onPressJumpstart}
           icon={<MagicWand color={Colors.black} />}
+          gradientBackground
         />
       )}
       <SelectRecipientButton

@@ -386,6 +386,7 @@
   "accountAddressLabel": "Account Address",
   "celoAmountLabel": "Amount (CELO)",
   "maxSymbol": "Max",
+  "percentage": "{{percentage}}%",
   "withdrawCeloReview": "Review",
   "withdrawCeloTo": "Withdraw to",
   "withdrawCeloAmount": "Amount (CELO)",
@@ -695,8 +696,8 @@
     "body": "Once they set up their {{appName}} wallet and connect their number, you’ll each get an exclusive NFT."
   },
   "inviteRewardsBannerCUSD": {
-    "title": "Invite friends and get up to 12 cUSD",
-    "body": "Once they connect their number and add funds to {{appName}}, you’ll both receive 0.50 cUSD."
+    "title": "Refer a friend and receive USDT together",
+    "body": "Once they connect their phone number to {{appName}}, you’ll both receive 1 USDT."
   },
   "inviteWithUrl": {
     "title": "Invite a Friend",
@@ -704,14 +705,14 @@
     "button": "Share Invite",
     "error": "There was an issue creating a sharable link",
     "share": "Hey! Sign up to {{appName}} wallet. I use it to grow my savings in USD and crypto, and you can set it up in seconds with just a phone number. Make sure to sign up with my referral link here: {{shareUrl}}.",
-    "help": "To collect this reward, the invitee must download through the referral link, connect their phone number, add funds and keep them in their {{appName}} wallet for 7 days. <0>View all terms</0>",
+    "help": "To collect this reward, the invitee must download through the referral link and connect their phone number to a new {{appName}} wallet. <0>View all terms</0>",
     "rewardsActive": {
       "title": "Invite friends and collect NFTs",
       "body": "Invite your friends and family to download {{appName}} and each of you will get an exclusive NFT"
     },
     "rewardsActiveCUSD": {
-      "title": "GET UP TO 12 cUSD for inviting your friends to {{appName}}!",
-      "body": "Get 0.50 cUSD for every friend you invite to {{appName}}. Once they connect their number, add funds, and hold them for 7 days, you’ll both get 0.50 cUSD. Hurry, funds are limited! (Limit 25 friends)."
+      "title": "Invite a friend to {{appName}} and receive USDT together",
+      "body": "Invite a friend to {{appName}}. Once they download the app with your link and connect their phone number, you’ll each get 1 USDT while funds last. Spread the word!"
     }
   },
   "getReward": "Get ${{reward}}",
@@ -1058,7 +1059,7 @@
   "inviteWithoutPayment": "Hi! I’ve been using {{appName}} to send crypto worldwide. It’s easy to try and I want to invite you to check it out with this link: {{link}}",
   "inviteWithEscrowedPayment": "Hi! I’ve been using {{appName}} to send crypto worldwide. I just sent you {{amount}} {{token}}. Please download the {{appName}} App and redeem your {{token}} using this link: {{link}}",
   "inviteWithRewards": "Hi! 👋 I'm using {{appName}} as my crypto wallet. It's super quick to download the app and connect your phone number - plus, we both get a special edition NFT as a reward. 💫 \n\nUse this link to download: {{link}}",
-  "inviteWithRewardsCUSD": "Hey! Right now we can both get a free $0.50 reward if you sign up, connect your number, and fund your {{appName}} wallet. I use it to grow my savings in USD and crypto, and you can set it up in seconds with just a phone number. Make sure to sign up with my referral link here: \n\n{{link}} \n\n Hurry, the referral promotion ends soon.",
+  "inviteWithRewardsCUSD": "Hey! Right now we can both get 1 USDT if you sign up to {{appName}} wallet and connect your phone number. I use it to grow my savings with crypto, and you can set it up in seconds with just a phone number. Make sure to sign up with my referral link here: \n\n{{link}} \n\n Hurry, the referral promotion ends soon!",
   "loadingContacts": "Finding your contacts",
   "myCode": "My Code",
   "scanCode": "Scan",
@@ -1458,14 +1459,15 @@
   "dappsScreen": {
     "title": "Dapps",
     "titleDiscover": "Discover",
-    "exploreDapps": "Explore Dapps",
-    "exploreAll": "Explore All",
+    "exploreDapps": "Dapps",
+    "exploreAll": "View All",
     "message": "Explore ways to use your assets",
     "errorMessage": "There was an error loading dapps",
     "featuredDapp": "Featured",
     "allDapps": "All",
     "favoriteDapps": "My Favorites",
     "mostPopularDapps": "Most Popular",
+    "mostPopularDapps_UK": "Other Dapps",
     "favoriteDappsAndAll": "My Favorites & All",
     "searchPlaceHolder": "Search dapps",
     "noFavorites": {
@@ -1481,7 +1483,8 @@
       "message": "<0>{{filter}}</0> filter applied",
       "removeFilter": "Remove filter",
       "searchMessage": "No matching results found for <0>\"{{searchTerm}}\"</0>"
-    }
+    },
+    "disclaimer_UK": "This is a list of third-party Dapps. The description for each Dapp is purely informational, and not an invitation to use them."
   },
   "dappRankings": {
     "title": "Dapp rankings",
@@ -1982,8 +1985,8 @@
       "body": "Looks like {{contactName}} isn't on {{appName}}. You can still send a payment if you know their wallet address, or send an invite instead. \n\n After they download the wallet and connect their phone number, you’ll both get an exclusive NFT."
     },
     "rewardsActiveCUSD": {
-      "title": "Invite {{contactName}} to {{appName}} and get 0.50 cUSD",
-      "body": "Looks like {{contactName}} isn’t on {{appName}}. You can still send a payment if you know their wallet address, or send an invite instead. \n\n After they download {{appName}}, connect their phone number, add funds and keep them in their wallet for 7 days, you will both get 0.50 cUSD while funds last."
+      "title": "Refer {{contactName}} to {{appName}} and get 1 USDT",
+      "body": "Looks like {{contactName}} isn’t on {{appName}}. You can still send a payment if you know their wallet address, or send an invite instead. \n\nAfter they download {{appName}} and connect their phone number, you will both get 1 USDT while funds last."
     }
   },
   "celoNews": {
@@ -2123,18 +2126,22 @@
   },
   "sendSelectRecipient": {
     "searchText": "Search by wallet address",
+    "searchInputLabel": "To",
+    "searchInputPlaceholder": "Wallet Address",
     "paste": "Paste from clipboard",
     "title": "Select a recipient",
     "contactsTitle": "Select a contact",
+    "header": "Send",
+    "contactsHeader": "Send to Contacts",
     "recents": "Recents",
     "results": "Results",
     "qr": {
-      "title": "Scan or Show QR Code",
-      "subtitle": "Quickly find addresses on {{appName}}"
+      "title": "Send via QR Code",
+      "subtitle": "Tap to scan or show an address"
     },
     "invite": {
-      "title": "Send crypto to your friends",
-      "subtitle": "Send funds or an invite to your contacts"
+      "title": "Send to a Contact",
+      "subtitle": "Send funds to your contacts"
     },
     "jumpstart": {
       "title": "Send with a Live Link",
@@ -2199,6 +2206,7 @@
     "title": "Enter Amount",
     "selectToken": "Select a Token",
     "networkFee": "{{networkName}} Network Fee",
+    "networkFeeV1_97": "Network Fee",
     "lowerAmount": "Enter a lower amount",
     "maxAmountWarning": {
       "title": "Sending the maximum amount",
@@ -2280,7 +2288,40 @@
     "infiniteApprovalDescription": "Approved infinite {{tokenSymbol}} for trade",
     "revokeApprovalDescription": "Revoked {{tokenSymbol}} for trade",
     "descriptionLabel": "Details",
-    "crossChainSwapTransactionLabel": "Cross-chain"
+    "crossChainSwapTransactionLabel": "Cross-chain",
+    "depositTitle": "Deposited",
+    "depositSubtitle": "to {{txAppName}} Pool",
+    "depositSubtitle_noTxAppName": "to unknown app",
+    "withdrawTitle": "Withdrew",
+    "withdrawSubtitle": "from {{txAppName}} Pool",
+    "withdrawSubtitle_noTxAppName": "from unknown app",
+    "claimRewardTitle": "Collected",
+    "claimRewardSubtitle": "from {{txAppName}} Pool",
+    "claimRewardSubtitle_noTxAppName": "from unknown app",
+    "allTransactionsShown": "You've reached the end of your transaction history.",
+    "fetchErrorRetry": "Try again",
+    "error": {
+      "fetchError": "Oops, there was an issue refreshing your feed. Your transaction history may be incomplete for now."
+    },
+    "noTransactions": "Congratulations, you've successfully created a {{appName}} wallet!"
+  },
+  "transactionDetails": {
+    "descriptionLabel": "Details",
+    "depositTitle": "Deposited",
+    "depositSubtitle": "Deposited {{tokenSymbol}} to {{txAppName}} Pool",
+    "depositSubtitle_noTxAppName": "Deposited {{tokenSymbol}} to unknown app",
+    "depositDetails": "Amount Deposited",
+    "withdrawTitle": "Withdrew",
+    "withdrawSubtitle": "Withdrew {{tokenSymbol}} from {{txAppName}} Pool",
+    "withdrawSubtitle_noTxAppName": "Withdrew {{tokenSymbol}} from unknown app",
+    "withdrawDetails": "Amount Withdrawn",
+    "claimRewardTitle": "Collected",
+    "claimRewardSubtitle": "Collected {{tokenSymbol}} from {{txAppName}} Pool",
+    "claimRewardSubtitle_noTxAppName": "Collected {{tokenSymbol}} from unknown app",
+    "claimRewardDetails": "Amount Collected",
+    "swap": "Swap",
+    "network": "Network",
+    "fees": "Fees"
   },
   "multichainBeta": {
     "beta": "BETA",
@@ -2548,7 +2589,8 @@
     "entrypoint": {
       "title": "Earn on your crypto",
       "subtitle": "Deposit and earn",
-      "description": "Earn on your crypto assets when you lend through a liquidity pool"
+      "description": "Earn by lending your crypto assets in liquidity pools.",
+      "totalDepositAndEarnings": "Total Deposit & Earnings"
     },
     "enterAmount": {
       "title": "How much would you like to deposit?",
@@ -2624,12 +2666,19 @@
     },
     "collect": {
       "title": "Congratulations! Review & collect your earnings",
+      "titleClaim": "You’re going to claim:",
+      "titleCollect": "You’re going to collect:",
+      "titleWithdraw": "You’re going to withdraw:",
       "total": "TOTAL",
       "plus": "PLUS",
+      "reward": "REWARD",
       "rate": "Rate (est.)",
       "apy": "{{apy}}% APY",
       "fee": "Gas Fee",
       "cta": "Collect Earnings",
+      "ctaWithdraw": "Withdraw",
+      "ctaReward": "Claim Reward",
+      "ctaExit": "Exit Pool",
       "errorTitle": "Something went wrong",
       "errorDescription": "Unable to fetch deposit details. Please try again.",
       "noGasTitle": "You need more {{symbol}} to continue",
@@ -2783,6 +2832,11 @@
   "duration_year_other": "{{count}} years",
   "duration_yearMonth_one": "1 year, 1 month",
   "duration_yearMonth_other": "{{count}} years, {{count2}} months",
+  "tokenEnterAmount": {
+    "availableBalance": "Available: <0></0>",
+    "selectToken": "Select token",
+    "fiatPriceUnavailable": "Price unavailable"
+  },
   "celoDollarAmount": "<0></0> Celo Dollar",
   "celoDollarAmount_plural": "<0></0> Celo Dollars"
 }

@@ -386,6 +386,7 @@
   "accountAddressLabel": "Account Address",
   "celoAmountLabel": "Amount (CELO)",
   "maxSymbol": "Max",
+  "percentage": "{{percentage}}%",
   "withdrawCeloReview": "Review",
   "withdrawCeloTo": "Withdraw to",
   "withdrawCeloAmount": "Amount (CELO)",
@@ -1460,14 +1461,15 @@
   "dappsScreen": {
     "title": "Dapps",
     "titleDiscover": "Discover",
-    "exploreDapps": "Explore Dapps",
-    "exploreAll": "Explore All",
+    "exploreDapps": "Dapps",
+    "exploreAll": "View All",
     "message": "Explore ways to use your assets",
     "errorMessage": "There was an error loading dapps",
     "featuredDapp": "Featured",
     "allDapps": "All",
     "favoriteDapps": "My Favorites",
     "mostPopularDapps": "Most Popular",
+    "mostPopularDapps_UK": "Other Dapps",
     "favoriteDappsAndAll": "My Favorites & All",
     "searchPlaceHolder": "Search dapps",
     "noFavorites": {
@@ -1483,7 +1485,8 @@
       "message": "<0>{{filter}}</0> filter applied",
       "removeFilter": "Remove filter",
       "searchMessage": "No matching results found for <0>\"{{searchTerm}}\"</0>"
-    }
+    },
+    "disclaimer_UK": "This is a list of third-party Dapps. The description for each Dapp is purely informational, and not an invitation to use them."
   },
   "dappRankings": {
     "title": "Dapp rankings",
@@ -2125,18 +2128,22 @@
   },
   "sendSelectRecipient": {
     "searchText": "Search by wallet address",
+    "searchInputLabel": "To",
+    "searchInputPlaceholder": "Wallet Address",
     "paste": "Paste from clipboard",
     "title": "Select a recipient",
     "contactsTitle": "Select a contact",
+    "header": "Send",
+    "contactsHeader": "Send to Contacts",
     "recents": "Recents",
     "results": "Results",
     "qr": {
-      "title": "Scan or Show QR Code",
-      "subtitle": "Quickly find addresses on {{appName}}"
+      "title": "Send via QR Code",
+      "subtitle": "Tap to scan or show an address"
     },
     "invite": {
-      "title": "Send crypto to your friends",
-      "subtitle": "Send funds or an invite to your contacts"
+      "title": "Send to a Contact",
+      "subtitle": "Send funds to your contacts"
     },
     "jumpstart": {
       "title": "Send with a Live Link",
@@ -2201,6 +2208,7 @@
     "title": "Enter Amount",
     "selectToken": "Select a Token",
     "networkFee": "{{networkName}} Network Fee",
+    "networkFeeV1_97": "Network Fee",
     "lowerAmount": "Enter a lower amount",
     "maxAmountWarning": {
       "title": "Sending the maximum amount",
@@ -2282,7 +2290,40 @@
     "infiniteApprovalDescription": "Approved infinite {{tokenSymbol}} for trade",
     "revokeApprovalDescription": "Revoked {{tokenSymbol}} for trade",
     "descriptionLabel": "Details",
-    "crossChainSwapTransactionLabel": "Cross-chain"
+    "crossChainSwapTransactionLabel": "Cross-chain",
+    "depositTitle": "Deposited",
+    "depositSubtitle": "to {{txAppName}} Pool",
+    "depositSubtitle_noTxAppName": "to an app",
+    "withdrawTitle": "Withdrew",
+    "withdrawSubtitle": "from {{txAppName}} Pool",
+    "withdrawSubtitle_noTxAppName": "from an app",
+    "claimRewardTitle": "Collected",
+    "claimRewardSubtitle": "from {{txAppName}} Pool",
+    "claimRewardSubtitle_noTxAppName": "from an app",
+    "allTransactionsShown": "You've reached the end of your transaction history.",
+    "fetchErrorRetry": "Try again",
+    "error": {
+      "fetchError": "Oops, there was an issue refreshing your feed. Your transaction history may be incomplete for now."
+    },
+    "noTransactions": "Congratulations, you've successfully created a {{appName}} wallet!"
+  },
+  "transactionDetails": {
+    "descriptionLabel": "Details",
+    "depositTitle": "Deposited",
+    "depositSubtitle": "Deposited {{tokenSymbol}} to {{txAppName}} Pool",
+    "depositSubtitle_noTxAppName": "Deposited {{tokenSymbol}} to an app",
+    "depositDetails": "Amount Deposited",
+    "withdrawTitle": "Withdrew",
+    "withdrawSubtitle": "Withdrew {{tokenSymbol}} from {{txAppName}} Pool",
+    "withdrawSubtitle_noTxAppName": "Withdrew {{tokenSymbol}} from an app",
+    "withdrawDetails": "Amount Withdrawn",
+    "claimRewardTitle": "Collected",
+    "claimRewardSubtitle": "Collected {{tokenSymbol}} from {{txAppName}} Pool",
+    "claimRewardSubtitle_noTxAppName": "Collected {{tokenSymbol}} from an app",
+    "claimRewardDetails": "Amount Collected",
+    "swap": "Swap",
+    "network": "Network",
+    "fees": "Fees"
   },
   "multichainBeta": {
     "beta": "BETA",
@@ -2554,7 +2595,8 @@
     "entrypoint": {
       "title": "Earn on your crypto",
       "subtitle": "Deposit and earn",
-      "description": "Earn on your crypto assets when you lend through a liquidity pool"
+      "description": "Earn by lending your crypto assets in liquidity pools.",
+      "totalDepositAndEarnings": "Total Deposit & Earnings"
     },
     "enterAmount": {
       "title": "How much would you like to deposit?",
@@ -2630,12 +2672,19 @@
     },
     "collect": {
       "title": "Congratulations! Review & collect your earnings",
+      "titleClaim": "You’re going to claim:",
+      "titleCollect": "You’re going to collect:",
+      "titleWithdraw": "You’re going to withdraw:",
       "total": "TOTAL",
       "plus": "PLUS",
+      "reward": "REWARD",
       "rate": "Rate (est.)",
       "apy": "{{apy}}% APY",
       "fee": "Gas Fee",
       "cta": "Collect Earnings",
+      "ctaWithdraw": "Withdraw",
+      "ctaReward": "Claim Reward",
+      "ctaExit": "Exit Pool",
       "errorTitle": "Something went wrong",
       "errorDescription": "Unable to fetch deposit details. Please try again.",
       "noGasTitle": "You need more {{symbol}} to continue",
@@ -2788,5 +2837,10 @@
   "duration_year_one": "1 year",
   "duration_year_other": "{{count}} years",
   "duration_yearMonth_one": "1 year, 1 month",
-  "duration_yearMonth_other": "{{count}} years, {{count2}} months"
+  "duration_yearMonth_other": "{{count}} years, {{count2}} months",
+  "tokenEnterAmount": {
+    "availableBalance": "Available: <0></0>",
+    "selectToken": "Select token",
+    "fiatPriceUnavailable": "Price unavailable"
+  }
 }

@@ -1,12 +1,13 @@
-import { fireEvent, render, waitFor } from '@testing-library/react-native'
+import { act, fireEvent, render, waitFor, within } from '@testing-library/react-native'
 import BigNumber from 'bignumber.js'
 import React from 'react'
+import { DeviceEventEmitter } from 'react-native'
 import { getNumberFormatSettings } from 'react-native-localize'
 import { Provider } from 'react-redux'
 import AppAnalytics from 'src/analytics/AppAnalytics'
 import { EarnEvents } from 'src/analytics/Events'
 import EarnEnterAmount from 'src/earn/EarnEnterAmount'
-import { usePrepareTransactions } from 'src/earn/prepareTransactions'
+import { usePrepareEnterAmountTransactionsCallback } from 'src/earn/hooks'
 import { CICOFlow } from 'src/fiatExchanges/utils'
 import { navigate } from 'src/navigator/NavigationService'
 import { Screens } from 'src/navigator/Screens'
@@ -35,7 +36,7 @@ import {
   mockUSDCAddress,
 } from 'test/values'
 
-jest.mock('src/earn/prepareTransactions')
+jest.mock('src/earn/hooks')
 jest.mock('react-native-localize')
 jest.mock('src/statsig') // statsig isn't used directly but the hooksApiSelector uses it
 jest
@@ -162,7 +163,7 @@ describe('EarnEnterAmount', () => {
       .mocked(getNumberFormatSettings)
       .mockReturnValue({ decimalSeparator: '.', groupingSeparator: ',' })
     store.clearActions()
-    jest.mocked(usePrepareTransactions).mockReturnValue({
+    jest.mocked(usePrepareEnterAmountTransactionsCallback).mockReturnValue({
       prepareTransactionsResult: undefined,
       refreshPreparedTransactions: refreshPreparedTransactionsSpy,
       clearPreparedTransactions: jest.fn(),
@@ -184,6 +185,20 @@ describe('EarnEnterAmount', () => {
       expect(getByTestId('EarnEnterAmount/TokenSelect')).toHaveTextContent('USDC')
       expect(getByTestId('EarnEnterAmount/TokenSelect')).toBeDisabled()
       expect(queryByTestId('downArrowIcon')).toBeFalsy()
+    })
+
+    it('should apply the maximum amount if the user selects the max option', async () => {
+      const { getByTestId } = render(
+        <Provider store={store}>
+          <MockedNavigator component={EarnEnterAmount} params={depositParams} />
+        </Provider>
+      )
+      await act(() => {
+        DeviceEventEmitter.emit('keyboardDidShow', { endCoordinates: { height: 100 } })
+      })
+
+      fireEvent.press(within(getByTestId('EarnEnterAmount/AmountOptions')).getByText('maxSymbol'))
+      expect(getByTestId('EarnEnterAmount/TokenAmountInput').props.value).toBe('10') // balance
     })
 
     it('should prepare transactions with the expected inputs', async () => {
@@ -214,7 +229,7 @@ describe('EarnEnterAmount', () => {
     })
 
     it('should show tx details and handle navigating to the deposit bottom sheet', async () => {
-      jest.mocked(usePrepareTransactions).mockReturnValue({
+      jest.mocked(usePrepareEnterAmountTransactionsCallback).mockReturnValue({
         prepareTransactionsResult: {
           prepareTransactionsResult: mockPreparedTransaction,
           swapTransaction: undefined,
@@ -343,7 +358,7 @@ describe('EarnEnterAmount', () => {
     })
 
     it('should show tx details and handle navigating to the deposit bottom sheet', async () => {
-      jest.mocked(usePrepareTransactions).mockReturnValue({
+      jest.mocked(usePrepareEnterAmountTransactionsCallback).mockReturnValue({
         prepareTransactionsResult: {
           prepareTransactionsResult: mockPreparedTransaction,
           swapTransaction: mockSwapTransaction,
@@ -412,6 +427,20 @@ describe('EarnEnterAmount', () => {
       expect(queryByTestId('downArrowIcon')).toBeFalsy()
     })
 
+    it('should apply the maximum amount if the user selects the max option', async () => {
+      const { getByTestId } = render(
+        <Provider store={store}>
+          <MockedNavigator component={EarnEnterAmount} params={withdrawParams} />
+        </Provider>
+      )
+      await act(() => {
+        DeviceEventEmitter.emit('keyboardDidShow', { endCoordinates: { height: 100 } })
+      })
+
+      fireEvent.press(within(getByTestId('EarnEnterAmount/AmountOptions')).getByText('maxSymbol'))
+      expect(getByTestId('EarnEnterAmount/TokenAmountInput').props.value).toBe('11') // balance * pool price per share
+    })
+
     it('should prepare transactions with the expected inputs', async () => {
       const { getByTestId } = render(
         <Provider store={store}>
@@ -443,7 +472,7 @@ describe('EarnEnterAmount', () => {
     })
 
     it('should show tx details for withdrawal', async () => {
-      jest.mocked(usePrepareTransactions).mockReturnValue({
+      jest.mocked(usePrepareEnterAmountTransactionsCallback).mockReturnValue({
         prepareTransactionsResult: {
           prepareTransactionsResult: mockPreparedTransaction,
           swapTransaction: undefined,
@@ -489,11 +518,16 @@ describe('EarnEnterAmount', () => {
         mode: 'withdraw',
       })
 
-      //TODO(ACT-1389): check navigation to withdrawal confirmation screen
+      expect(navigate).toHaveBeenCalledWith(Screens.EarnConfirmationScreen, {
+        pool: mockEarnPositions[0],
+        mode: 'withdraw',
+        inputAmount: '8',
+        useMax: false,
+      })
     })
 
     it('should allow the user to set an input value over the pool balance if pricePerShare is greater than 1', async () => {
-      jest.mocked(usePrepareTransactions).mockReturnValue({
+      jest.mocked(usePrepareEnterAmountTransactionsCallback).mockReturnValue({
         prepareTransactionsResult: {
           prepareTransactionsResult: mockPreparedTransaction,
           swapTransaction: undefined,
@@ -576,7 +610,7 @@ describe('EarnEnterAmount', () => {
 
   // tests independent of deposit / swap-deposit
   it('should show a warning and not allow the user to continue if they input an amount greater than balance', async () => {
-    jest.mocked(usePrepareTransactions).mockReturnValue({
+    jest.mocked(usePrepareEnterAmountTransactionsCallback).mockReturnValue({
       prepareTransactionsResult: {
         prepareTransactionsResult: mockPreparedTransaction,
         swapTransaction: undefined,
@@ -599,7 +633,7 @@ describe('EarnEnterAmount', () => {
   })
 
   it('should show loading spinner when preparing transaction', async () => {
-    jest.mocked(usePrepareTransactions).mockReturnValue({
+    jest.mocked(usePrepareEnterAmountTransactionsCallback).mockReturnValue({
       prepareTransactionsResult: undefined,
       refreshPreparedTransactions: jest.fn(),
       clearPreparedTransactions: jest.fn(),
@@ -654,14 +688,18 @@ describe('EarnEnterAmount', () => {
       },
     })
 
-    it('entering MAX token applies correct decimal separator', async () => {
+    it('selecting max token amount applies correct decimal separator', async () => {
       const { getByTestId } = render(
         <Provider store={mockStore}>
           <MockedNavigator component={EarnEnterAmount} params={params} />
         </Provider>
       )
 
-      fireEvent.press(getByTestId('EarnEnterAmount/Max'))
+      await act(() => {
+        DeviceEventEmitter.emit('keyboardDidShow', { endCoordinates: { height: 100 } })
+      })
+
+      fireEvent.press(within(getByTestId('EarnEnterAmount/AmountOptions')).getByText('maxSymbol'))
       expect(getByTestId('EarnEnterAmount/TokenAmountInput').props.value).toBe(
         replaceSeparators('100000.42')
       )
@@ -672,7 +710,7 @@ describe('EarnEnterAmount', () => {
   })
 
   it('should track analytics and navigate correctly when tapping cta to add gas', async () => {
-    jest.mocked(usePrepareTransactions).mockReturnValue({
+    jest.mocked(usePrepareEnterAmountTransactionsCallback).mockReturnValue({
       prepareTransactionsResult: {
         prepareTransactionsResult: mockPreparedTransactionNotEnough,
         swapTransaction: undefined,
@@ -709,7 +747,7 @@ describe('EarnEnterAmount', () => {
   })
 
   it('should show the FeeDetailsBottomSheet when the user taps the fee details icon', async () => {
-    jest.mocked(usePrepareTransactions).mockReturnValue({
+    jest.mocked(usePrepareEnterAmountTransactionsCallback).mockReturnValue({
       prepareTransactionsResult: {
         prepareTransactionsResult: mockPreparedTransaction,
         swapTransaction: undefined,
@@ -734,7 +772,7 @@ describe('EarnEnterAmount', () => {
   })
 
   it('should show swap fees on the FeeDetailsBottomSheet when swap transaction is present', async () => {
-    jest.mocked(usePrepareTransactions).mockReturnValue({
+    jest.mocked(usePrepareEnterAmountTransactionsCallback).mockReturnValue({
       prepareTransactionsResult: {
         prepareTransactionsResult: mockPreparedTransaction,
         swapTransaction: mockSwapTransaction,
@@ -765,7 +803,7 @@ describe('EarnEnterAmount', () => {
   })
 
   it('should display swap bottom sheet when the user taps the swap details icon', async () => {
-    jest.mocked(usePrepareTransactions).mockReturnValue({
+    jest.mocked(usePrepareEnterAmountTransactionsCallback).mockReturnValue({
       prepareTransactionsResult: {
         prepareTransactionsResult: mockPreparedTransaction,
         swapTransaction: mockSwapTransaction,

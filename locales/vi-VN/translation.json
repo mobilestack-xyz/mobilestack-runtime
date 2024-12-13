@@ -386,6 +386,7 @@
   "accountAddressLabel": "Địa chỉ tài khoản",
   "celoAmountLabel": "Số tiền (CELO)",
   "maxSymbol": "Tối đa",
+  "percentage": "{{percentage}}%",
   "withdrawCeloReview": "Xem lại",
   "withdrawCeloTo": "Rút vào",
   "withdrawCeloAmount": "Số tiền (CELO)",
@@ -695,8 +696,8 @@
     "body": "Sau khi họ thiết lập ví {{appName}} và kết nối số điện thoại, mỗi bạn sẽ nhận được một NFT độc quyền."
   },
   "inviteRewardsBannerCUSD": {
-    "title": "Mời bạn bè và nhận đến 12 cUSD",
-    "body": "Khi họ kết nối số điện thoại và nạp tiền vào {{appName}}, cả hai bạn sẽ nhận được 0,50 cUSD mỗi người."
+    "title": "Giới thiệu bạn bè và nhận USDT",
+    "body": "Khi họ kết nối số điện thoại, cả hai bạn sẽ nhận được 1 USDT mỗi người."
   },
   "inviteWithUrl": {
     "title": "Mời bạn bè",
@@ -704,14 +705,14 @@
     "button": "Chia sẻ lời mời",
     "error": "Đã xảy ra lỗi khi tạo đường liên kết có thể chia sẻ",
     "share": "Xin chào! Hãy đăng ký ví {{appName}}. Tôi sử dụng ví này để gia tăng tiết kiệm bằng USD và tiền điện tử. Và chỉ bằng số điện thoại, bạn có thể tạo ví trong vài giây. Nhớ đăng ký bằng đường liên kết giới thiệu này của tôi nhé: {{shareUrl}}.",
-    "help": "Để nhận thưởng, người được mời phải tải xuống qua liên kết giới thiệu, kết nối số điện thoại của họ, nạp tiền và giữ tiền trong ví {{appName}} trong 7 ngày. <0>Xem tất cả các điều khoản</0>",
+    "help": "Để nhận thưởng, người được mời phải tải xuống qua liên kết giới thiệu và kết nối số điện thoại của họ. <0>Xem tất cả các điều khoản</0>",
     "rewardsActive": {
       "title": "Mời bạn bè và nhận NFT",
       "body": "Mời bạn bè và gia đình tải xuống {{appName}} và mỗi người trong số các bạn sẽ nhận được một NFT độc quyền"
     },
     "rewardsActiveCUSD": {
-      "title": "ĐƯỢC NHẬN ĐẾN 12 cUSD khi giới thiệu bạn bè đến với {{appName}}!",
-      "body": "Với mỗi người mà bạn giới thiệu tới {{appName}}, bạn sẽ nhận được 0,50 cUSD. Khi họ kết nối số điện thoại, nạp tiền và giữ tiền trong vòng 7 ngày, cả hai bạn sẽ nhận được 0,50 cUSD mỗi người. Hãy nhanh tay, số tiền có hạn! (Giới hạn 25 bạn)."
+      "title": "ĐƯỢC USDT khi giới thiệu bạn bè đến với {{appName}}",
+      "body": "Giới thiệu bạn bè ngay hôm nay và bạn sẽ nhận được 1 USDT khi họ kết nối số điện thoại. Hãy nhanh tay, số tiền có hạn!"
     }
   },
   "getReward": "Nhận ${{reward}}",
@@ -1056,7 +1057,7 @@
   "inviteWithoutPayment": "Xin chào! Tôi đang sử dụng {{appName}} để gửi tiền điện tử trên toàn thế giới. Ứng dụng này rất dễ dùng nên tôi muốn mời bạn dùng thử bằng đường liên kết sau: {{link}}",
   "inviteWithEscrowedPayment": "Xin chào! Tôi đang sử dụng {{appName}} để gửi tiền điện tử trên toàn thế giới. Tôi vừa gửi cho bạn {{amount}} {{token}}. Vui lòng tải xuống Ứng dụng {{appName}} và chấp nhận {{token}} của bạn bằng đường liên kết sau: {{link}}",
   "inviteWithRewards": "Xin chào! 👋 Tôi đang sử dụng ví tiền điện tử {{appName}}. Bạn có thể tải nhanh ứng dụng này xuống và kết nối số điện thoại của mình, tất cả chúng ta sẽ cùng nhận được tiền thưởng dạng NFT phiên bản đặc biệt. 💫 \n\nSử dụng đường liên kết này để tải xuống: {{link}}",
-  "inviteWithRewardsCUSD": "Chào bạn! Chúng ta có thể được nhận ngay số tiền thưởng $0,50 miễn phí nếu bạn đăng ký, kết nối số điện thoại và nạp tiền vào ví {{appName}}. Tôi sử dụng ví này để tăng khoản tiết kiệm bằng USD và tiền điện tử của mình và bạn có thể dễ dàng tạo ví trong vài giây chỉ bằng số điện thoại. Hãy đăng ký bằng đường liên kết giới thiệu của tôi tại đây nhé: \n\n{{link}} \n\n Hãy nhanh tay, chương trình khuyến mãi giới thiệu sẽ sớm kết thúc.",
+  "inviteWithRewardsCUSD": "Chào bạn! Chúng tôi có thể nhận ngay 1 USDT tiền thưởng miễn phí nếu bạn đăng ký {{appName}} và kết nối số điện thoại của mình. Tôi sử dụng ví này để tăng khoản tiết kiệm bằng USD và tiền điện tử của mình và bạn có thể dễ dàng tạo ví trong vài giây chỉ bằng số điện thoại. Hãy đăng ký bằng đường liên kết giới thiệu của tôi tại đây nhé: \n\n{{link}} \n\n Hãy nhanh tay, chương trình khuyến mãi giới thiệu sẽ sớm kết thúc.",
   "loadingContacts": "Đang tìm danh bạ của bạn",
   "myCode": "Mã của tôi",
   "scanCode": "Quét",
@@ -1456,14 +1457,15 @@
   "dappsScreen": {
     "title": "Dapp",
     "titleDiscover": "Khám phá",
-    "exploreDapps": "Khám phá các ứng dụng dapp",
-    "exploreAll": "Khám phá tất cả",
+    "exploreDapps": "Dapp",
+    "exploreAll": "Xem tất cả",
     "message": "Khám phá những phương thức sử dụng tài sản",
     "errorMessage": "Đã xảy ra lỗi khi tải dapp",
     "featuredDapp": "Nổi bật",
     "allDapps": "Tất cả",
     "favoriteDapps": "Dapps yêu thích của tôi",
     "mostPopularDapps": "Phổ biến nhất",
+    "mostPopularDapps_UK": "Các Dapp khác",
     "favoriteDappsAndAll": "Mục yêu thích của tôi và Tất cả",
     "searchPlaceHolder": "Tìm kiếm Dapp",
     "noFavorites": {
@@ -1479,7 +1481,8 @@
       "message": "Đã áp dụng bộ lọc <0>{{filter}}</0>",
       "removeFilter": "Xóa bộ lọc",
       "searchMessage": "Không tìm thấy kết quả phù hợp cho cụm từ tìm kiếm <0>“{{searchTerm}}”</0>"
-    }
+    },
+    "disclaimer_UK": "Đây là danh sách các Dapp của bên thứ ba. Phần mô tả của mỗi Dapp chỉ nhằm cung cấp thông tin, không phải lời mời sử dụng."
   },
   "dappRankings": {
     "title": "Xếp hạng Dapp",
@@ -1981,7 +1984,7 @@
     },
     "rewardsActiveCUSD": {
       "title": "Mời {{contactName}} tham gia {{appName}} và nhận 0,50 cUSD",
-      "body": "Có vẻ như {{contactName}} chưa sử dụng {{appName}}. Nếu biết địa chỉ ví của họ, bạn vẫn có thể gửi khoản thanh toán hoặc gửi lời mời. \n\n Sau khi họ tải xuống {{appName}}, kết nối số điện thoại, nạp tiền và giữ tiền trong ví trong 7 ngày, thì cả hai bạn đều sẽ nhận được 0,50 cUSD trong thời gian quỹ tiền thưởng vẫn còn hiệu lực."
+      "body": "Có vẻ như {{contactName}} chưa sử dụng {{appName}}. Nếu biết địa chỉ ví của họ, bạn vẫn có thể gửi khoản thanh toán hoặc gửi lời mời. \n\nSau khi họ tải xuống {{appName}} và kết nối số điện thoại, thì cả hai bạn đều sẽ nhận được 1 USDT trong thời gian quỹ tiền thưởng vẫn còn hiệu lực."
     }
   },
   "celoNews": {
@@ -2121,18 +2124,22 @@
   },
   "sendSelectRecipient": {
     "searchText": "Tìm kiếm theo địa chỉ ví",
+    "searchInputLabel": "Đến",
+    "searchInputPlaceholder": "Địa chỉ ví hoặc số điện thoại",
     "paste": "Dán từ bảng nhớ tạm",
     "title": "Chọn người nhận",
     "contactsTitle": "Chọn một liên hệ",
+    "header": "Gửi",
+    "contactsHeader": "Gửi đến người liên hệ",
     "recents": "Gần đây",
     "results": "Kết quả",
     "qr": {
-      "title": "Quét hoặc hiển thị mã QR",
-      "subtitle": "Tìm nhanh địa chỉ trên {{appName}}"
+      "title": "Gửi qua mã QR",
+      "subtitle": "Nhấn để quét hoặc hiển thị địa chỉ"
     },
     "invite": {
-      "title": "Gửi tiền điện tử cho bạn bè",
-      "subtitle": "Gửi tiền hoặc lời mời đến danh bạ của bạn"
+      "title": "Gửi đến người liên hệ",
+      "subtitle": "Gửi tiền đến người liên hệ của bạn"
     },
     "jumpstart": {
       "title": "Gửi bằng đường liên kết trực tiếp",
@@ -2197,6 +2204,7 @@
     "title": "Nhập số tiền",
     "selectToken": "Chọn token",
     "networkFee": "Phí mạng lưới {{networkName}}",
+    "networkFeeV1_97": "Phí mạng lưới",
     "lowerAmount": "Nhập số tiền thấp hơn",
     "maxAmountWarning": {
       "title": "Đang gửi số tiền tối đa",
@@ -2278,7 +2286,40 @@
     "infiniteApprovalDescription": "Đã phê duyệt {{tokenSymbol}} không giới hạn cho giao dịch",
     "revokeApprovalDescription": "Đã thu hồi {{tokenSymbol}} để giao dịch",
     "descriptionLabel": "Chi tiết",
-    "crossChainSwapTransactionLabel": "Chuỗi chéo"
+    "crossChainSwapTransactionLabel": "Chuỗi chéo",
+    "depositTitle": "Đã nạp",
+    "depositSubtitle": "vào Quỹ {{txAppName}}",
+    "depositSubtitle_noTxAppName": "đến ứng dụng chưa xác định",
+    "withdrawTitle": "Rút",
+    "withdrawSubtitle": "từ Quỹ {{txAppName}}",
+    "withdrawSubtitle_noTxAppName": "từ ứng dụng chưa xác định",
+    "claimRewardTitle": "Đã nhận",
+    "claimRewardSubtitle": "từ Quỹ {{txAppName}}",
+    "claimRewardSubtitle_noTxAppName": "từ ứng dụng chưa xác định",
+    "allTransactionsShown": "Bạn đã xem hết lịch sử giao dịch của mình.",
+    "fetchErrorRetry": "Thử lại",
+    "error": {
+      "fetchError": "Rất tiếc, hệ thống đã gặp sự cố khi làm mới bảng tin của bạn. Lịch sử giao dịch của bạn có thể tạm thời chưa hiển thị đầy đủ."
+    },
+    "noTransactions": "Xin chúc mừng! Bạn đã tạo thành công ví {{appName}}!"
+  },
+  "transactionDetails": {
+    "descriptionLabel": "Chi tiết",
+    "depositTitle": "Đã nạp",
+    "depositSubtitle": "Đã nạp {{tokenSymbol}} vào Quỹ {{txAppName}}",
+    "depositSubtitle_noTxAppName": "Đã nạp {{tokenSymbol}} vào ứng dụng chưa xác định",
+    "depositDetails": "Số tiền đã nạp",
+    "withdrawTitle": "Rút",
+    "withdrawSubtitle": "Rút {{tokenSymbol}} từ Quỹ {{txAppName}}",
+    "withdrawSubtitle_noTxAppName": "Đã rút {{tokenSymbol}} từ ứng dụng chưa xác định",
+    "withdrawDetails": "Số tiền đã rút",
+    "claimRewardTitle": "Đã nhận",
+    "claimRewardSubtitle": "Đã nhận {{tokenSymbol}} từ Quỹ {{txAppName}}",
+    "claimRewardSubtitle_noTxAppName": "Đã thu được {{tokenSymbol}} từ ứng dụng chưa xác định",
+    "claimRewardDetails": "Số tiền đã nhận",
+    "swap": "Trao đổi",
+    "network": "Mạng lưới",
+    "fees": "Phí"
   },
   "multichainBeta": {
     "beta": "BETA",
@@ -2546,16 +2587,17 @@
     "entrypoint": {
       "title": "Kiếm tiền từ tiền điện tử của bạn",
       "subtitle": "Nạp tiền và kiếm tiền",
-      "description": "Kiếm tiền từ tài sản tiền điện tử của bạn bằng cách cho vay thông qua bể thanh khoản"
+      "description": "Kiếm tiền bằng cách cho vay tài sản tiền điện tử trong các bể thanh khoản.",
+      "totalDepositAndEarnings": "Tổng tiền nạp và thu nhập"
     },
     "enterAmount": {
       "title": "Bạn muốn nạp bao nhiêu tiền?",
-      "titleWithdraw": "How much would you like to withdraw?",
+      "titleWithdraw": "Bạn muốn rút bao nhiêu tiền?",
       "deposit": "Nạp tiền",
       "fees": "Phí",
       "available": "Khả dụng",
       "swap": "Trao đổi",
-      "claimingReward": "Claiming Reward",
+      "claimingReward": "Nhận tiền thưởng",
       "earnUpToLabel": "Bạn có thể kiếm được đến:",
       "rateLabel": "Tỷ giá (ước tính)",
       "earnUpTo": "~{{fiatSymbol}}{{amount}} / năm",
@@ -2575,7 +2617,7 @@
         "estNetworkFee": "Phí mạng ước tính",
         "maxNetworkFee": "Phí mạng tối đa",
         "networkFeeDescription": "Phí mạng là khoản phí bắt buộc giúp mạng có thể xử lý giao dịch nạp tiền.",
-        "networkFeeDescriptionWithdrawal": "The network fee is required by the network to process the withdrawal transaction.",
+        "networkFeeDescriptionWithdrawal": "Phí mạng là khoản phí bắt buộc giúp mạng có thể xử lý giao dịch rút tiền.",
         "networkSwapFeeDescription": "Phí mạng là khoản phí bắt buộc giúp mạng có thể xử lý giao dịch nạp tiền. Chúng tôi sẽ thu phí {{appName}} là {{appFeePercentage}}% khi bạn sử dụng sản phẩm của chúng tôi.",
         "appSwapFee": "Phí {{appName}}"
       },
@@ -2587,8 +2629,8 @@
         "swapDescription": "Để nạp được tiền vào bể thì token của bạn cần được đổi sang token bể."
       },
       "withdrawingAndClaimingCard": {
-        "title": "Withdrawing and Claiming",
-        "description": "{{providerName}} requires you to claim all available rewards anytime you withdraw."
+        "title": "Rút tiền và nhận tiền",
+        "description": "{{providerName}} yêu cầu bạn nhận tất cả các khoản tiền thưởng có sẵn mà bạn đã rút."
       }
     },
     "activePools": {
@@ -2622,12 +2664,19 @@
     },
     "collect": {
       "title": "Xin chúc mừng! Hãy kiểm tra lại và nhận thu nhập của bạn",
+      "titleClaim": "Bạn sẽ nhận được:",
+      "titleCollect": "Bạn sẽ thu được:",
+      "titleWithdraw": "Bạn sẽ rút:",
       "total": "TỔNG",
       "plus": "THÊM",
+      "reward": "TIỀN THƯỞNG",
       "rate": "Tỷ giá (ước tính)",
       "apy": "{{apy}}% APY",
       "fee": "Phí ga",
       "cta": "Nhận thu nhập",
+      "ctaWithdraw": "Rút tiền",
+      "ctaReward": "Nhận tiền thưởng",
+      "ctaExit": "Thoát quỹ",
       "errorTitle": "Đã xảy ra lỗi",
       "errorDescription": "Không thể tìm thông tin chi tiết về số tiền nạp. Vui lòng thử lại.",
       "noGasTitle": "Bạn cần thêm {{symbol}} để tiếp tục",
@@ -2699,11 +2748,11 @@
       "chainName": "Chuỗi: <0>{{networkName}}</0>",
       "protocolName": "Giao thức: <0>{{providerName}}</0>",
       "yieldRate": "Mức sinh lợi",
-      "dailyYieldRate": "Daily Rate",
+      "dailyYieldRate": "Mức sinh lợi hằng ngày",
       "ratePercent": "{{rate}}%",
       "rewards": "Tiền thưởng",
       "noRewards": "Không có tiền thưởng",
-      "safetyScore": "Safety Score",
+      "safetyScore": "Điểm an toàn",
       "tvl": "TVL",
       "ageOfPool": "Thời gian hoạt động của bể",
       "learnMoreOnProvider": "Xem bể trên {{providerName}}",
@@ -2711,19 +2760,19 @@
       "depositAndEarnings": "Nạp tiền & Thu nhập",
       "withdraw": "Rút tiền",
       "withdrawBottomSheet": {
-        "title": "Select withdraw type",
-        "withdrawAndClaim": "Withdraw and Claim",
-        "withdrawDescription": "Withdraw a specific amount of any tokens you have deposited in the pool",
-        "withdrawAndClaimRewardsDescription": "Withdraw a specific amount of any tokens you have deposited in the pool and claim your rewards automatically",
-        "withdrawAndClaimEarningsDescription": "Withdraw a specific amount of any tokens you have deposited in the pool and claim your earnings automatically",
+        "title": "Chọn phương thức rút tiền",
+        "withdrawAndClaim": "Rút tiền và nhận tiền",
+        "withdrawDescription": "Rút một số lượng cụ thể bất kỳ token nào mà bạn đã nạp vào bể",
+        "withdrawAndClaimRewardsDescription": "Rút một số lượng cụ thể bất kỳ token nào mà bạn đã nạp vào bể và tự động nhận tiền thưởng của bạn",
+        "withdrawAndClaimEarningsDescription": "Rút một số lượng cụ thể bất kỳ token nào mà bạn đã nạp vào bể và tự động nhận thu nhập của bạn",
         "claimRewards": "Xác nhận tiền thưởng",
-        "claimRewardsDescription": "Claim your rewards. Partial amounts of the reward cannot be claimed",
-        "claimEarnings": "Claim Earnings",
-        "claimEarningsDescription": "Claim the earnings on your deposit. Partial amounts cannot be claimed",
-        "exit": "Exit",
-        "exitDescription": "Exiting will withdraw everything you have in the pool",
-        "exitWithRewardsDescription": "Exiting will withdraw everything you have in the pool, including rewards",
-        "exitWithEarningsDescription": "Exiting will withdraw everything you have in the pool, including earnings"
+        "claimRewardsDescription": "Nhận tiền thưởng của bạn. Không nhận được một phần tiền thưởng",
+        "claimEarnings": "Nhận thu nhập",
+        "claimEarningsDescription": "Nhận thu nhập từ khoản tiền nạp của bạn. Không nhận được một phần thu nhập",
+        "exit": "Thoát",
+        "exitDescription": "Thao tác thoát sẽ rút toàn bộ tài sản mà bạn có trong bể",
+        "exitWithRewardsDescription": "Thao tác thoát sẽ rút toàn bộ tài sản mà bạn có trong bể, bao gồm tiền thưởng",
+        "exitWithEarningsDescription": "Thao tác thoát sẽ rút toàn bộ tài sản mà bạn có trong bể, bao gồm thu nhập"
       },
       "totalDepositAndEarnings": "Tổng tiền nạp và thu nhập",
       "titleLocalAmountDisplay": "{{localCurrencySymbol}}{{localCurrencyAmount}}",
@@ -2738,15 +2787,15 @@
         "ageDescription": "Các bể thanh khoản cũ hơn có thể cho thấy một thành tích hoạt động ổn định và lịch sử xây dựng niềm tin trong cộng đồng. Vì lý do này, một số người có thể coi những bể này an toàn hơn.\n\nKhông có cách nào toàn vẹn trong việc xác định rủi ro; vì vậy, hãy sử dụng thông tin này vào nghiên cứu tổng thể của bạn để đưa ra quyết định tốt nhất cho bản thân.",
         "yieldRateTitle": "Mức sinh lợi",
         "yieldRateDescription": "Trong khi hầu hết các bể cung cấp thu nhập dưới dạng token của bể thanh khoản, một số bể lại cung cấp (các) token khác dưới dạng tiền thưởng hoặc ưu đãi bổ sung.\n\nVì {{appName}} tổng hợp các bể từ nhiều giao thức, chúng tôi đã kết hợp tất cả các tỷ lệ thu nhập và tiền thưởng thành một mức sinh lợi chung duy nhất để dễ dàng đánh giá tiềm năng thu nhập của bạn. Con số này chỉ là ước tính vì giá trị thu nhập và tiền thưởng thay đổi liên tục.\n\nĐể tìm hiểu thêm các phân tích chi tiết về thu nhập, bạn có thể truy cập <0>{{providerName}}</0>.",
-        "dailyYieldRateTitle": "Daily Rate",
-        "dailyYieldRateDescription": "The daily rate displayed reflects the daily rate provided by {{providerName}}.",
-        "dailyYieldRateLink": "View More Daily Rate Details On {{providerName}}",
-        "safetyScoreTitle": "Safety Score",
-        "safetyScoreDescription": "The Safety Score breaks down the safety of the underlying vault asset into several key factors. It aims to draw your attention to the risks to consider before investing, and to inform you about technical details that you may not be able to evaluate for yourself.\nThough the full position is always more complicated, the Safety Score is provided to simplify the key risk and safety considerations and kick-start your own due diligence. Our team carefully considers each factor before a vault is deployed, and keeps a watchful eye on each asset, chain and protocol which {{providerName}} has integrated.",
-        "safetyScoreRateLink": "View More Safety Score Details On {{providerName}}"
+        "dailyYieldRateTitle": "Mức sinh lợi hằng ngày",
+        "dailyYieldRateDescription": "Mức sinh lợi hằng ngày mà bạn thấy là dữ liệu do {{providerName}} cung cấp.",
+        "dailyYieldRateLink": "Xem thêm thông tin đầy đủ về mức sinh lợi của {{providerName}}",
+        "safetyScoreTitle": "Điểm an toàn",
+        "safetyScoreDescription": "Điểm an toàn phân tách độ an toàn của tài sản cơ sở trong kho thành một vài yếu tố chính. Điểm an toàn giúp bạn chú ý đến các rủi ro cần cân nhắc trước khi đầu tư, đồng thời thông báo các chi tiết cơ bản mà bạn có thể không tự đánh giá được.\nMặc dù lệnh giao dịch đầy đủ sẽ luôn phức tạp hơn, nhưng Điểm an toàn vẫn có thể đơn giản hóa các rủi ro và an toàn chính cần cân nhắc và khởi động quá trình tự thẩm định của bạn. Đội ngũ của chúng tôi cẩn thận xem xét từng yếu tố trước khi áp dụng một kho tiền và luôn theo dõi từng tài sản, chuỗi và giao thức mà {{providerName}} đã tích hợp.",
+        "safetyScoreRateLink": "Xem thông tin đầy đủ về điểm an toàn của {{providerName}}"
       },
-      "viewMoreDetails": "View More Details",
-      "viewLessDetails": "View Less Details"
+      "viewMoreDetails": "Xem thêm thông tin",
+      "viewLessDetails": "Ẩn bớt thông tin"
     },
     "beforeDepositBottomSheet": {
       "youNeedTitle": "Bạn cần {{tokenSymbol}} trên {{tokenNetwork}} để nạp",
@@ -2781,5 +2830,10 @@
   "duration_year_other": "{{count}} năm",
   "duration_yearMonth_one": "1 năm, 1 tháng",
   "duration_yearMonth_other": "{{count}} năm, {{count2}} tháng",
+  "tokenEnterAmount": {
+    "availableBalance": "Có sẵn: <0></0>",
+    "selectToken": "Chọn token",
+    "fiatPriceUnavailable": "Không có giá"
+  },
   "celoDollarAmount_0": "&amp;lt;0&amp;gt;&amp;lt;/0&amp;gt; Đô la Celo"
 }
