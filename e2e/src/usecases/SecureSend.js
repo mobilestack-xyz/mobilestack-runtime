@@ -10,8 +10,7 @@ import {
   fundWallet,
   quickOnboarding,
   scrollIntoView,
-  waitForElementByIdAndTap,
-  waitForElementId,
+  waitForElementById,
 } from '../utils/utils'
 
 const AMOUNT_TO_SEND = '0.01'
@@ -33,17 +32,20 @@ export default SecureSend = () => {
     })
 
     it('Send cUSD to phone number with multiple mappings', async () => {
-      await waitForElementByIdAndTap('HomeAction-Send', 30_000)
-      await waitForElementByIdAndTap('SendSelectRecipientSearchInput', 3000)
+      await waitForElementById('HomeAction-Send', { timeout: 30_000, tap: true })
+      await waitForElementById('SendSelectRecipientSearchInput', {
+        timeout: 3000,
+        tap: true,
+      })
       await element(by.id('SendSelectRecipientSearchInput')).replaceText(
         WALLET_MULTIPLE_VERIFIED_PHONE_NUMBER
       )
       await element(by.id('RecipientItem')).tap()
 
-      await waitForElementByIdAndTap('SendOrInviteButton', 30_000)
+      await waitForElementById('SendOrInviteButton', { timeout: 30_000, tap: true })
 
       // Use the last digits of the account to confirm the sender.
-      await waitForElementByIdAndTap('confirmAccountButton', 30_000)
+      await waitForElementById('confirmAccountButton', { timeout: 30_000, tap: true })
       for (let index = 0; index < 4; index++) {
         const character = WALLET_MULTIPLE_VERIFIED_ADDRESS.charAt(
           WALLET_MULTIPLE_VERIFIED_ADDRESS.length - (4 - index)
@@ -56,8 +58,11 @@ export default SecureSend = () => {
       await element(by.id('ConfirmAccountButton')).tap()
 
       // Select the currency
-      await waitForElementByIdAndTap('SendEnterAmount/TokenSelect', 30_000)
-      await waitForElementByIdAndTap('cUSDSymbol', 30_000)
+      await waitForElementById('SendEnterAmount/TokenSelect', {
+        timeout: 30_000,
+        tap: true,
+      })
+      await waitForElementById('cUSDSymbol', { timeout: 30_000, tap: true })
 
       // Enter the amount and review
       await element(by.id('SendEnterAmount/TokenAmountInput')).tap()
@@ -70,7 +75,7 @@ export default SecureSend = () => {
       await enterPinUiIfNecessary()
 
       // Return to home screen.
-      await waitForElementId('HomeAction-Send', 30_000)
+      await waitForElementById('HomeAction-Send', { timeout: 30_000 })
     })
   })
 }

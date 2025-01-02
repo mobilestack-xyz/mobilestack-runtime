@@ -1,5 +1,5 @@
 import { launchApp, reloadReactNative } from '../utils/retries'
-import { isElementVisible, waitForElementId, waitForElementByIdAndTap } from '../utils/utils'
+import { isElementVisible, waitForElementById } from '../utils/utils'
 
 export default onRamps = () => {
   beforeAll(async () => {
@@ -7,8 +7,8 @@ export default onRamps = () => {
   })
   beforeEach(async () => {
     await reloadReactNative()
-    await waitForElementByIdAndTap('Tab/Wallet')
-    await waitForElementId('HomeAction-Add')
+    await waitForElementById('Tab/Wallet', { tap: true })
+    await waitForElementById('HomeAction-Add')
     await element(by.id('HomeAction-Add')).tap()
   })
 
@@ -22,9 +22,9 @@ export default onRamps = () => {
       ${'CELO'} | ${'20'}
       ${'CELO'} | ${'2'}
     `('Then should display $token provider(s) for $$amount', async ({ token, amount }) => {
-      await waitForElementByIdAndTap(`BottomSheet${token}Symbol`)
+      await waitForElementById(`BottomSheet${token}Symbol`, { tap: true })
 
-      await waitForElementId('FiatExchangeInput')
+      await waitForElementById('FiatExchangeInput')
       await element(by.id('FiatExchangeInput')).replaceText(`${amount}`)
       await element(by.id('FiatExchangeNextButton')).tap()
       await expect(element(by.text('Select Payment Method'))).toBeVisible()

@@ -1,7 +1,7 @@
 import jestExpect from 'expect'
 import { E2E_TEST_FAUCET } from '../../scripts/consts'
 import { launchApp, reloadReactNative } from '../utils/retries'
-import { enterPinUiIfNecessary, waitForElementByIdAndTap, waitForElementId } from '../utils/utils'
+import { enterPinUiIfNecessary, waitForElementById } from '../utils/utils'
 
 const deepLinks = {
   withoutAddress:
@@ -54,7 +54,7 @@ export default HandleDeepLinkSend = () => {
       await enterPinUiIfNecessary()
 
       // Return to home screen.
-      await waitForElementByIdAndTap('Tab/Wallet')
+      await waitForElementById('Tab/Wallet', { tap: true })
       await waitFor(element(by.id('HomeAction-Send')))
         .toBeVisible()
         .withTimeout(30_000)
@@ -64,18 +64,21 @@ export default HandleDeepLinkSend = () => {
       await launchDeepLink({
         url: `celo://wallet/pay?address=${E2E_TEST_FAUCET}&currencyCode=USD&token=cUSD&displayName=TestFaucet`,
       })
-      await waitForElementId('SendEnterAmount/TokenSelect', 10_000)
+      await waitForElementById('SendEnterAmount/TokenSelect')
       await expect(element(by.text('cUSD on Celo')).atIndex(0)).toBeVisible()
       await element(by.id('SendEnterAmount/TokenAmountInput')).replaceText('0.01')
       await element(by.id('SendEnterAmount/TokenAmountInput')).tapReturnKey()
-      await waitForElementByIdAndTap('SendEnterAmount/ReviewButton', 30_000)
+      await waitForElementById('SendEnterAmount/ReviewButton', {
+        timeout: 30_000,
+        tap: true,
+      })
 
       // Send Transaction
       await element(by.id('ConfirmButton')).tap()
       await enterPinUiIfNecessary()
 
       // Return to home screen.
-      await waitForElementByIdAndTap('Tab/Wallet')
+      await waitForElementById('Tab/Wallet', { tap: true })
       await waitFor(element(by.id('HomeAction-Send')))
         .toBeVisible()
         .withTimeout(30_000)
@@ -117,7 +120,7 @@ export default HandleDeepLinkSend = () => {
       await enterPinUiIfNecessary()
 
       // Return to home screen.
-      await waitForElementByIdAndTap('Tab/Wallet')
+      await waitForElementById('Tab/Wallet', { tap: true })
       await waitFor(element(by.id('HomeAction-Send')))
         .toBeVisible()
         .withTimeout(30_000)
@@ -151,7 +154,7 @@ export default HandleDeepLinkSend = () => {
       await enterPinUiIfNecessary()
 
       // Return to home screen.
-      await waitForElementByIdAndTap('Tab/Wallet')
+      await waitForElementById('Tab/Wallet', { tap: true })
       await waitFor(element(by.id('HomeAction-Send')))
         .toBeVisible()
         .withTimeout(30_000)
