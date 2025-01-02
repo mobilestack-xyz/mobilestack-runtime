@@ -15,7 +15,7 @@ import { sleep } from '../../../src/utils/sleep'
 import WALLET_ADDRESS from '../utils/consts'
 import { formatUri, utf8ToHex } from '../utils/encoding'
 import { launchApp } from '../utils/retries'
-import { enterPinUiIfNecessary, waitForElementByIdAndTap } from '../utils/utils'
+import { enterPinUiIfNecessary, waitForElementById } from '../utils/utils'
 
 import jestExpect from 'expect'
 
@@ -49,7 +49,7 @@ const verifySuccessfulConnection = async () => {
   await waitFor(element(by.text(`Success! Please go back to ${dappName} to continue`)))
     .toBeVisible()
     .withTimeout(15 * 1000)
-  await waitForElementByIdAndTap('Tab/Wallet')
+  await waitForElementById('Tab/Wallet', { tap: true })
   await waitFor(element(by.id('HomeAction-Send')))
     .toBeVisible()
     .withTimeout(15 * 1000)
@@ -358,7 +358,7 @@ export default WalletConnect = () => {
   })
 
   it('Then should be able to disconnect a session', async () => {
-    await waitForElementByIdAndTap('WalletHome/SettingsGearButton')
+    await waitForElementById('WalletHome/SettingsGearButton', { tap: true })
     await element(by.id('SettingsMenu/ConnectedDapps')).tap()
     await element(by.text('Tap to Disconnect')).tap()
     await element(by.text('Disconnect')).tap()

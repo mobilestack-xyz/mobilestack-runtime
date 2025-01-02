@@ -12,7 +12,6 @@ import {
   navigateToProfile,
   scrollIntoView,
   waitForElementId,
-  waitForElementByIdAndTap,
 } from '../utils/utils'
 import { sleep } from '../../../src/utils/sleep'
 
@@ -89,7 +88,7 @@ export default NewAccountPhoneVerification = () => {
       }
 
       // Choose your own adventure (CYA screen)
-      await waitForElementByIdAndTap('ChooseYourAdventure/Later')
+      await waitForElementById('ChooseYourAdventure/Later', { tap: true })
 
       // Assert we've arrived at the home screen
       await waitFor(element(by.id('HomeAction-Send')))
@@ -151,7 +150,7 @@ export default NewAccountPhoneVerification = () => {
       }
 
       // Choose your own adventure (CYA screen)
-      await waitForElementByIdAndTap('ChooseYourAdventure/Later')
+      await waitForElementById('ChooseYourAdventure/Later', { tap: true })
 
       // Assert we've arrived at the home screen
       await waitFor(element(by.id('HomeAction-Send')))
@@ -184,7 +183,7 @@ export default NewAccountPhoneVerification = () => {
     await element(by.text('Skip')).tap()
 
     // Choose your own adventure (CYA screen)
-    await waitForElementByIdAndTap('ChooseYourAdventure/Later')
+    await waitForElementById('ChooseYourAdventure/Later', { tap: true })
 
     // Assert we've arrived at the home screen
     await waitForElementId('HomeAction-Send')
