@@ -72,9 +72,11 @@ export default function EarnDepositBottomSheet({
     depositTokenAmount: depositAmount.toString(),
     fromTokenId: inputTokenId,
     fromTokenAmount: inputAmount.toString(),
+    fromNetworkId: preparedTransaction.feeCurrency.networkId,
     networkId: pool.networkId,
     poolId: pool.positionId,
     mode,
+    swapType: swapTransaction?.swapType,
   }
 
   const { estimatedFeeAmount, feeCurrency } = getFeeCurrencyAndAmounts(preparedTransaction)
@@ -84,7 +86,7 @@ export default function EarnDepositBottomSheet({
     return null
   }
 
-  const isGasSubsidized = isGasSubsidizedForNetwork(pool.networkId)
+  const isGasSubsidized = isGasSubsidizedForNetwork(preparedTransaction.feeCurrency.networkId)
   const { termsUrl } = pool.dataProps
 
   const onPressProviderIcon = () => {
@@ -129,6 +131,10 @@ export default function EarnDepositBottomSheet({
       })
     )
     AppAnalytics.track(EarnEvents.earn_deposit_complete, commonAnalyticsProperties)
+    // Dismiss the bottom sheet when transaction is submitted. This avoids a handful of issues,
+    // such as needing to manually dismiss the sheet for PIN entry, and the bottom sheet
+    // persisting onto the home screen.
+    forwardedRef.current?.close()
   }
 
   const onPressCancel = () => {
@@ -232,9 +238,7 @@ export default function EarnDepositBottomSheet({
           </View>
         </LabelledItem>
         <LabelledItem label={t('earnFlow.depositBottomSheet.network')}>
-          <Text style={styles.value}>
-            {NETWORK_NAMES[preparedTransaction.feeCurrency.networkId]}
-          </Text>
+          <Text style={styles.value}>{NETWORK_NAMES[pool.networkId]}</Text>
         </LabelledItem>
         {termsUrl ? (
           <Text style={styles.footer}>
