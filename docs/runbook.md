@@ -16,6 +16,43 @@ Mobile Stack apps include code that intercepts network requests in order to add 
 
 Various pieces of configuration need to be changed within the environment config files, including `APP_BUNDLE_ID`, `APP_DISPLAY_NAME`, `DEEP_LINK_URL_SCHEME`, and `APP_REGISTRY_NAME`. Make sure to also update the `APP_NAME` value in `src/config.ts`. See [here](https://github.com/mobilestack-xyz/mobilestack-shefi/commit/5622c31a17ab949fed74eaba84bfa9f6edd5c787#diff-c3095d5010e65c52737a98a5d618ea24049ebe90c8470752426081d70ed6e012) for an example.
 
+### Update app icon
+
+#### iOS
+
+Generate icons with different sizes using [app icon
+generator](https://www.appicon.co/) (or similar tool) and replace the contents
+of `ios/MobileStack/Images.xcassets/AppIcon.appiconset/` with the generated
+files.
+
+Example PR [here](https://github.com/mobilestack-xyz/mobilestack-beefy/pull/11)
+
+#### Android
+
+Delete existing icon files using `rm ./android/**/ic_launcher*`
+
+Open the android folder of project in Android Studio (must use a version
+compatible with the gradle version, at the time of writing, the project uses
+grade v8.0.1 which works with Android Studio v2022.2.1 Patch 2).
+Follow this
+[guide](https://developer.android.com/studio/write/create-app-icons#access) to
+create the icons.
+
+Example PR [here](https://github.com/mobilestack-xyz/mobilestack-beefy/pull/12)
+
+### Update splash screen
+
+Splash screen is the first screen that shows up when the app is loading. The
+screen typically includes a background image (or color) and a foreground image
+(typically an icon). Generate 1x, 2x and 3x sizes of the images and replace the
+files as done in the following example PRs:
+
+Example using image for foreground and color for background [here](https://github.com/mobilestack-xyz/mobilestack-beefy/pull/6)
+
+Example using images for both foreground and background [here]()
+
+For iOS, you can also use Xcode to edit the LaunchScreen file.
+
 ### Set up Statsig
 
 In order to support remote configuration for certain pieces of config and feature gates within the app, you will need to set up Statsig. First, create a new Statsig project, and add the API key to the repo within the `secrets.json` file.
