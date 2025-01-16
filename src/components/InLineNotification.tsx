@@ -82,7 +82,7 @@ export function InLineNotification({
         )}
         <View style={styles.contentContainer}>
           {!!title && <Text style={styles.titleText}>{title}</Text>}
-          <Text style={[styles.bodyText]}>{description}</Text>
+          {!!description && <Text style={[styles.bodyText]}>{description}</Text>}
         </View>
       </View>
 
@@ -121,7 +121,6 @@ const styles = StyleSheet.create({
   },
   bodyText: {
     ...typeScale.bodyXSmall,
-    color: Colors.black,
   },
   ctaLabel: {
     ...typeScale.labelSmall,
@@ -134,7 +133,7 @@ const styles = StyleSheet.create({
 
 const variantColors: Record<NotificationVariant, CustomColors> = {
   [NotificationVariant.Info]: {
-    primary: Colors.black,
+    primary: Colors.textPrimary,
     secondary: Colors.gray1,
   },
   [NotificationVariant.Success]: {

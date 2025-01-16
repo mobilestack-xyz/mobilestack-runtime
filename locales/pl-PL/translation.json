@@ -2305,11 +2305,11 @@
     "depositDetails": "Kwota wpłacona",
     "withdrawTitle": "Wycofano",
     "withdrawSubtitle": "Wycofano {{tokenSymbol}} z puli {{txAppName}}",
-    "withdrawSubtitle_noTxAppName": "Wycofano {{tokenSymbol}} z aplikacji",
+    "withdrawSubtitle_noTxAppName": "Wypłacono {{tokenSymbol}} z aplikacji",
     "withdrawDetails": "Wypłacona kwota",
     "claimRewardTitle": "Zebrano",
     "claimRewardSubtitle": "Zebrano {{tokenSymbol}} z puli {{txAppName}}",
-    "claimRewardSubtitle_noTxAppName": "Zebrano {{tokenSymbol}} z aplikacji",
+    "claimRewardSubtitle_noTxAppName": "Odebrano {{tokenSymbol}} z aplikacji",
     "claimRewardDetails": "Zebrana kwota",
     "swap": "Zamieniaj",
     "network": "Sieć",
@@ -2583,6 +2583,7 @@
       "fees": "Opłaty",
       "available": "Dostępne",
       "swap": "Zamieniaj",
+      "estimatedDuration": "Szac. czas transakcji",
       "claimingReward": "Odbieranie nagrody",
       "earnUpToLabel": "Możesz zarobić do:",
       "rateLabel": "Stawka (szac.)",
@@ -2602,9 +2603,13 @@
         "moreInformation": "Więcej informacji",
         "estNetworkFee": "Szac. opłata sieciowa",
         "maxNetworkFee": "Maksymalna opłata sieciowa",
-        "networkFeeDescription": "Należy wnieść opłatę sieciową, aby sieć mogła przetworzyć transakcję wpłaty.",
-        "networkFeeDescriptionWithdrawal": "Należy wnieść opłatę sieciową, aby sieć mogła przetworzyć transakcję wypłaty.",
-        "networkSwapFeeDescription": "Należy wnieść opłatę sieciową, aby sieć mogła przetworzyć transakcje wpłaty. Opłata {{appName}} w wysokości {{appFeePercentage}}% jest pobierana za korzystanie z naszego produktu.",
+        "estCrossChainFee": "Szac. opłata cross-chain",
+        "maxCrossChainFee": "Maks. opłaty cross-chain",
+        "description_deposit": "Należy wnieść opłatę sieciową, aby sieć mogła przetworzyć transakcję wpłaty.",
+        "description_withdraw": "Należy wnieść opłatę sieciową, aby sieć mogła przetworzyć transakcję wypłaty.",
+        "description_depositSwapFee": "Należy wnieść opłatę sieciową, aby sieć mogła przetworzyć transakcje wpłaty. Opłata {{appName}} w wysokości {{appFeePercentage}}% jest pobierana za korzystanie z naszego produktu.",
+        "description_depositCrossChain": "Należy wnieść opłatę sieciową, aby sieć mogła przetworzyć transakcję wpłaty. Opłata za wymianę między łańcuchami jest pobierana przez dostawcę świadczącego usługi wymiany między łańcuchami.",
+        "description_depositCrossChainWithSwapFee": "Należy wnieść opłatę sieciową, aby sieć mogła przetworzyć transakcje wpłaty. Opłata {{appName}} w wysokości {{appFeePercentage}}% jest pobierana za korzystanie z naszego produktu. Opłata za wymianę między łańcuchami jest pobierana przez dostawcę świadczącego usługi wymiany między łańcuchami.",
         "appSwapFee": "Opłata w aplikacji {{appName}}"
       },
       "swapBottomSheet": {
@@ -2785,14 +2790,16 @@
     },
     "beforeDepositBottomSheet": {
       "youNeedTitle": "Aby dokonać wpłaty, potrzebny jest {{tokenSymbol}} w {{tokenNetwork}}",
-      "depositTitle": "Depozyt do puli",
+      "depositTitle": "Wpłata do puli",
       "crossChainAlternativeDescription": "Jeśli nie chcesz użyć swoich tokenów w {{tokenNetwork}}, wybierz poniższą opcję. Trzeba będzie tu wrócić, aby później sfinalizować wpłatę do puli.",
+      "alternativeDescription": "Jeśli nie chcesz użyć swoich tokenów, wybierz poniższą opcję. Trzeba będzie tu wrócić, aby później sfinalizować wpłatę do puli.",
       "beforeYouCanDepositTitle": "Zanim będzie można dokonać wpłaty...",
       "beforeYouCanDepositDescription": "Musisz dodać jeden z tokenów puli. Po dodaniu musisz tu wrócić, aby sfinalizować wpłatę do puli.",
-      "beforeYouCanDepositDescriptionV1_101": "Musisz dodać stronę {{tokenSymbol}} na {{tokenNetwork}}. Po dodaniu musisz wrócić, aby uzupełnić depozyt za basen.",
+      "beforeYouCanDepositDescriptionV1_101": "Musisz dodać {{tokenSymbol}} do {{tokenNetwork}}. Po dodaniu musisz tu wrócić, aby sfinalizować wpłatę do puli.",
       "action": {
         "swapAndDeposit": "Wymiana i wpłata",
         "swapAndDepositDescription": "Wybierz dowolny token w {{tokenNetwork}}. Wymienimy go i jednocześnie wpłacimy za Ciebie.",
+        "swapAndDepositAllTokensDescription": "Wybierz dowolny token. Wymienimy go i jednocześnie wpłacimy za Ciebie.",
         "crossChainSwap": "Wymiana międzyłańcuchowa",
         "crossChainSwapDescription": "Wymień token z innej sieci na {{tokenSymbol}}",
         "swap": "Zamieniaj",
@@ -2802,7 +2809,7 @@
         "transfer": "Transfer",
         "transferDescription": "Użyj dowolnego portfela lub giełdy kompatybilnej z {{tokenNetwork}}, aby wpłacić {{tokenSymbol}}",
         "addMore": "Kup więcej {{tokenSymbol}}",
-        "deposit": "Złóż depozyt na {{tokenSymbol}}",
+        "deposit": "Wpłać swoje {{tokenSymbol}}",
         "depositDescription": "Masz {{amount}} {{tokenSymbol}}"
       }
     }
@@ -2824,7 +2831,22 @@
   "tokenEnterAmount": {
     "availableBalance": "Dostępna: <0></0>",
     "selectToken": "Wybierz token",
-    "fiatPriceUnavailable": "Cena niedostępna"
+    "fiatPriceUnavailable": "Cena niedostępna",
+    "tokenDescription": "{{tokenName}} w {{tokenNetwork}}"
+  },
+  "gasFeeWarning": {
+    "title": "Potrzebujesz więcej {{tokenSymbol}} na opłaty za gaz",
+    "title_Dapp": "Masz niewystarczające saldo żetonów gazu",
+    "descriptionMaxAmount_Send": "Dodaj {{tokenSymbol}} do opłat za benzynę lub obniż wysyłaną kwotę.",
+    "descriptionMaxAmount_Swap": "Dodaj {{tokenSymbol}} do opłat za paliwo lub obniż kwotę wymiany.",
+    "descriptionMaxAmount_Deposit": "Dodaj {{tokenSymbol}} do opłat za benzynę lub obniż kwotę, którą wpłacasz.",
+    "descriptionMaxAmount_Withdraw": "Dodaj stronę {{tokenSymbol}} na opłaty za gaz lub obniż kwotę, którą wypłacasz.",
+    "descriptionDapp": "Dodaj {{tokenSymbol}} , aby zakończyć tę transakcję",
+    "ctaBuy": "Kup {{tokenSymbol}}",
+    "ctaAction_Send": "Wyślij mniejszą kwotę",
+    "ctaAction_Swap": "Wymień mniejszą kwotę",
+    "ctaAction_Deposit": "Wpłać mniejszą kwotę",
+    "ctaAction_Withdraw": "Wypłać mniejszą kwotę"
   },
   "celoDollarAmount_0": "<0></0> Celo Dolar",
   "celoDollarAmount_1": "&amp;lt;0&amp;gt;&amp;lt;/0&amp;gt; Celo Dolary",

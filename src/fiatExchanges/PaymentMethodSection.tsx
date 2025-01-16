@@ -149,7 +149,7 @@ export function PaymentMethodSection({
         >
           <>
             <Text style={styles.newLabelText}>{t('selectProviderScreen.newLabel')}</Text>
-            <InfoIcon size={16} color={colors.white} />
+            <InfoIcon size={16} color={colors.textInverse} />
           </>
         </Touchable>
       )}
@@ -331,7 +331,7 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
   },
   newLabelContainer: {
-    backgroundColor: colors.gray3,
+    backgroundColor: colors.textLink,
     borderRadius: 100,
     paddingVertical: 4,
     paddingHorizontal: 8,
@@ -342,7 +342,7 @@ const styles = StyleSheet.create({
   },
   newLabelText: {
     ...typeScale.labelSemiBoldSmall,
-    color: colors.white,
+    color: colors.textInverse,
     marginRight: 5,
   },
   category: {
@@ -354,7 +354,7 @@ const styles = StyleSheet.create({
   },
   providerDropdown: {
     ...typeScale.labelSmall,
-    color: colors.gray3,
+    color: colors.textSecondary,
   },
   expandedInfo: {
     ...typeScale.bodySmall,

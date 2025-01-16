@@ -83,7 +83,7 @@ export default function RecoveryPhraseInput({
                 showClearButton={false}
                 value={inputValue}
                 placeholder={inputPlaceholder}
-                placeholderTextColor={colors.gray3}
+                placeholderTextColor={colors.inactive}
                 onChangeText={onInputChange}
                 multiline={true}
                 // This disables keyboard suggestions on iOS, but unfortunately NOT on Android
@@ -135,8 +135,8 @@ export default function RecoveryPhraseInput({
 const styles = StyleSheet.create({
   container: {
     padding: 0,
-    backgroundColor: colors.white,
-    borderColor: colors.white,
+    backgroundColor: colors.background,
+    borderColor: colors.background,
     borderRadius: Spacing.Smallest8,
     borderWidth: 1,
   },

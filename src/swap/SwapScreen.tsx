@@ -406,7 +406,10 @@ export function SwapScreen({ route }: Props) {
         // to confirm the swap in this case.
         break
       case 'possible':
+        const swapId = uuidv4()
+
         AppAnalytics.track(SwapEvents.swap_review_submit, {
+          swapId,
           toToken: toToken.address,
           toTokenId: toToken.tokenId,
           toTokenNetworkId: toToken.networkId,
@@ -431,7 +434,6 @@ export function SwapScreen({ route }: Props) {
           ),
         })
 
-        const swapId = uuidv4()
         localDispatch(startSwap({ swapId }))
         dispatch(
           swapStart({
@@ -621,7 +623,17 @@ export function SwapScreen({ route }: Props) {
   const crossChainFeeCurrency = useSelector((state) =>
     feeCurrenciesSelector(state, fromToken?.networkId || networkConfig.defaultNetworkId)
   ).find((token) => token.isNative)
-  const crossChainFee = getCrossChainFee(quote, crossChainFeeCurrency)
+  const crossChainFee =
+    quote?.swapType === 'cross-chain'
+      ? getCrossChainFee({
+          feeCurrency: crossChainFeeCurrency,
+          preparedTransactions: quote.preparedTransactions,
+          fromTokenId: quote.fromTokenId,
+          sellAmount: quote.sellAmount,
+          estimatedCrossChainFee: quote.estimatedCrossChainFee,
+          maxCrossChainFee: quote.maxCrossChainFee,
+        })
+      : undefined
 
   const getWarningStatuses = () => {
     // NOTE: If a new condition is added here, make sure to update `allowSwap` below if
@@ -799,8 +811,8 @@ export function SwapScreen({ route }: Props) {
               onPress={handleSwitchTokens}
               testID="SwapScreen/SwitchTokens"
             >
-              <CircledIcon radius={Spacing.Large32} backgroundColor={colors.black}>
-                <ArrowDown color={colors.white} />
+              <CircledIcon radius={Spacing.Large32} backgroundColor={colors.textPrimary}>
+                <ArrowDown color={colors.textInverse} />
               </CircledIcon>
             </Touchable>
           </View>
@@ -818,7 +830,7 @@ export function SwapScreen({ route }: Props) {
 
           {showCrossChainSwapNotification && (
             <View style={styles.crossChainNotificationWrapper}>
-              <CrossChainIndicator />
+              <CrossChainIndicator backgroundColor={colors.textSecondary} />
               <Text style={styles.crossChainNotification}>
                 {t('swapScreen.crossChainNotification')}
               </Text>
@@ -1112,12 +1124,11 @@ const styles = StyleSheet.create({
     ...typeScale.labelXXSmall,
     paddingBottom: Spacing.Smallest8,
     flexWrap: 'wrap',
-    color: colors.gray3,
+    color: colors.textSecondary,
     textAlign: 'center',
   },
   disclaimerLink: {
     ...typeScale.labelXXSmall,
-    color: colors.black,
   },
   warning: {
     marginTop: Spacing.Thick24,
@@ -1144,7 +1155,7 @@ const styles = StyleSheet.create({
   crossChainNotification: {
     ...typeScale.labelXSmall,
     paddingLeft: Spacing.Tiny4,
-    color: colors.gray4,
+    color: colors.textSecondary,
   },
 })
 

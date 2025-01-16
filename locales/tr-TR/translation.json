@@ -2301,11 +2301,11 @@
     "depositDetails": "Yatırılan Toplam",
     "withdrawTitle": "Çekilen",
     "withdrawSubtitle": "{{txAppName}} Havuzundan {{tokenSymbol}} Çekildi",
-    "withdrawSubtitle_noTxAppName": "Bir uygulamadan {{tokenSymbol}} adresini geri çekti",
+    "withdrawSubtitle_noTxAppName": "Bir uygulamadan {{tokenSymbol}} çekildi",
     "withdrawDetails": "Çekilen Tutar",
     "claimRewardTitle": "Toplanan",
     "claimRewardSubtitle": "{{txAppName}} Havuzundan {{tokenSymbol}} Toplandı",
-    "claimRewardSubtitle_noTxAppName": "Bir uygulamadan toplanan {{tokenSymbol}}",
+    "claimRewardSubtitle_noTxAppName": "Bir uygulamadan {{tokenSymbol}} toplandı",
     "claimRewardDetails": "Toplanan Tutar",
     "swap": "Swap",
     "network": "Ağ",
@@ -2579,6 +2579,7 @@
       "fees": "Ücretler",
       "available": "Kullanılabilir",
       "swap": "Swap",
+      "estimatedDuration": "Tahmini İşlem Süresi",
       "claimingReward": "Ödül Alma",
       "earnUpToLabel": "Şu kadar kazanabilirsiniz:",
       "rateLabel": "Oran (tahmini)",
@@ -2598,9 +2599,13 @@
         "moreInformation": "Daha fazla bilgi",
         "estNetworkFee": "Tahmini Ağ Ücreti",
         "maxNetworkFee": "Maks. Ağ Ücreti",
-        "networkFeeDescription": "Ağ ücreti, yatırma işlemin gerçekleştirilmesi için ağ tarafından talep edilir.",
-        "networkFeeDescriptionWithdrawal": "Ağ ücreti, ağın, para çekme işlemlerini işleme koyması için gereklidir.",
-        "networkSwapFeeDescription": "Ağ ücreti, para yatırma işlemlerinin gerçekleştirilmesi için ağ tarafından talep edilir. Ürünümüzü kullanmanız için %{{appFeePercentage}} {{appName}} ücreti tahsil edilir.",
+        "estCrossChainFee": "Tahmini Zincirler Arası İşlem Ücreti",
+        "maxCrossChainFee": "Maksimum Zincirler Arası İşlem Ücreti",
+        "description_deposit": "Ağ ücreti, yatırma işlemin gerçekleştirilmesi için ağ tarafından talep edilir.",
+        "description_withdraw": "Ağ ücreti, ağın, para çekme işlemlerini işleme koyması için gereklidir.",
+        "description_depositSwapFee": "Ağ ücreti, para yatırma işlemlerinin gerçekleştirilmesi için ağ tarafından talep edilir. Ürünümüzü kullanmanız için %{{appFeePercentage}} {{appName}} ücreti tahsil edilir.",
+        "description_depositCrossChain": "Ağ ücreti, para yatırma işleminin gerçekleştirilmesi için ağ tarafından talep edilir. Zincirler arası işlem ücreti, zincirler arası işlem sağlayıcısı tarafından tahsil edilir.",
+        "description_depositCrossChainWithSwapFee": "Ağ ücreti, para yatırma işlemlerinin gerçekleştirilmesi için ağ tarafından talep edilir. Ürünümüzü kullanmanız için %{{appFeePercentage}} {{appName}} ücreti tahsil edilir. Zincirler arası işlem ücreti, zincirler arası işlem sağlayıcısı tarafından tahsil edilir.",
         "appSwapFee": "{{appName}} Ücreti"
       },
       "swapBottomSheet": {
@@ -2781,14 +2786,16 @@
     },
     "beforeDepositBottomSheet": {
       "youNeedTitle": "Yatırma İşlemi için {{tokenNetwork}} ağında {{tokenSymbol}} tokenine sahip olmalısınız",
-      "depositTitle": "Havuz için depozito",
+      "depositTitle": "Havuza yatır",
       "crossChainAlternativeDescription": "{{tokenNetwork}} ağındaki tokenlerinizi kullanmaz istemiyorsanız aşağıdaki seçeneklerden birini seçin. Havuza yatırma işleminizi tamamlamak için daha sonra geri dönmeniz gerekecektir.",
+      "alternativeDescription": "Tokenlerinizi kullanmaz istemiyorsanız aşağıdaki seçeneklerden birini seçin. Havuza para yatırma işleminizi tamamlamak için daha sonra geri dönmeniz gerekecektir.",
       "beforeYouCanDepositTitle": "Para yatırmadan önce...",
       "beforeYouCanDepositDescription": "Havuz tokenlerinden birini eklemeniz gereklidir. Token eklendikten sonra havuza para yatırma işlemini tamamlamak için geri dönmeniz gerekir.",
-      "beforeYouCanDepositDescriptionV1_101": "{{tokenSymbol}} adresini {{tokenNetwork}}adresine eklemeniz gerekmektedir. Eklendikten sonra, havuz depozitonuzu tamamlamak için geri dönmeniz gerekecektir.",
+      "beforeYouCanDepositDescriptionV1_101": "{{tokenNetwork}} ağında {{tokenSymbol}} eklemeniz gereklidir. Token eklendikten sonra havuza para yatırma işlemini tamamlamak için geri dönmeniz gerekir.",
       "action": {
         "swapAndDeposit": "Swap ve Para Yatırma",
         "swapAndDepositDescription": "{{tokenNetwork}} ağındaki herhangi bir tokeni seçin. Seçtiğiniz tokeni sizin için anında swap edip yatırma işleminizi tamamlayacağız.",
+        "swapAndDepositAllTokensDescription": "Herhangi bir token seçin. Seçtiğiniz tokeni sizin için anında swap edip para yatırma işleminizi tamamlayacağız.",
         "crossChainSwap": "Zincirler arası Swap",
         "crossChainSwapDescription": "Başka bir ağdaki tokeni {{tokenSymbol}} ile swap edin",
         "swap": "Swap",
@@ -2797,9 +2804,9 @@
         "addDescription": "Güvenilir sağlayıcılarımızdan birini kullanarak {{tokenNetwork}} ağında {{tokenSymbol}} satın alın",
         "transfer": "Transfer Et",
         "transferDescription": "{{tokenSymbol}} yatırmak için {{tokenNetwork}} uyumlu cüzdan veya borsa kullanın",
-        "addMore": "Daha fazla satın al {{tokenSymbol}}",
-        "deposit": "{{tokenSymbol}}adresinizi yatırın",
-        "depositDescription": "{{amount}} {{tokenSymbol}}adresiniz var."
+        "addMore": "Daha fazla {{tokenSymbol}} satın al",
+        "deposit": "{{tokenSymbol}} tokeninizi yatırın",
+        "depositDescription": "{{amount}} {{tokenSymbol}} var"
       }
     }
   },
@@ -2820,7 +2827,22 @@
   "tokenEnterAmount": {
     "availableBalance": "Mevcut: <0></0>",
     "selectToken": "Token seçin",
-    "fiatPriceUnavailable": "Fiyat mevcut değil"
+    "fiatPriceUnavailable": "Fiyat mevcut değil",
+    "tokenDescription": "{{tokenNetwork}} ağında {{tokenName}}"
+  },
+  "gasFeeWarning": {
+    "title": "Benzin ücretleri için daha fazla {{tokenSymbol}} adresine ihtiyacınız var",
+    "title_Dapp": "Yetersiz gaz jetonu bakiyeniz var",
+    "descriptionMaxAmount_Send": "Benzin ücretleri için {{tokenSymbol}} adresini ekleyin veya gönderdiğiniz miktarı azaltın",
+    "descriptionMaxAmount_Swap": "Benzin ücretleri için {{tokenSymbol}} adresini ekleyin veya takas ettiğiniz miktarı düşürün",
+    "descriptionMaxAmount_Deposit": "Benzin ücretleri için {{tokenSymbol}} adresini ekleyin veya yatırdığınız miktarı düşürün",
+    "descriptionMaxAmount_Withdraw": "Gaz ücretleri için {{tokenSymbol}} adresini ekleyin veya çektiğiniz miktarı düşürün",
+    "descriptionDapp": "Bu işlemi tamamlamak için {{tokenSymbol}} adresini ekleyin",
+    "ctaBuy": "{{tokenSymbol}} satın alın",
+    "ctaAction_Send": "Daha küçük miktar gönderin",
+    "ctaAction_Swap": "Daha düşük bir tutarı swap edin",
+    "ctaAction_Deposit": "Daha az miktarda para yatırın",
+    "ctaAction_Withdraw": "Daha küçük miktarda para çekme"
   },
   "celoDollarAmount": "<0></0> Celo Dollar",
   "celoDollarAmount_plural": "<0></0> Celo Dollars"
