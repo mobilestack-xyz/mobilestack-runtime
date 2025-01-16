@@ -89,7 +89,13 @@ function DappCard({
             hitSlop={favoriteIconHitslop}
             testID={`Dapp/Favorite/${dapp.id}`}
           >
-            {isFavorited ? <Star /> : !disableFavoriting ? <StarOutline /> : <></>}
+            {isFavorited ? (
+              <Star />
+            ) : !disableFavoriting ? (
+              <StarOutline color={Colors.inactive} />
+            ) : (
+              <></>
+            )}
           </Touchable>
         </>
       </Touchable>
@@ -124,7 +130,6 @@ const styles = StyleSheet.create({
   title: {
     ...typeScale.labelSemiBoldSmall,
     lineHeight: 24,
-    color: Colors.black,
   },
   subtitle: {
     ...typeScale.bodyXSmall,

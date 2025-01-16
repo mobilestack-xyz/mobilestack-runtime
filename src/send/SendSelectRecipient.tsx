@@ -54,7 +54,7 @@ function GetStartedSection() {
         <CircledIcon
           radius={Math.min(24 * getFontScaleSync(), 50)}
           style={getStartedStyles.optionNum}
-          backgroundColor={colors.white}
+          backgroundColor={colors.background}
         >
           <Text adjustsFontSizeToFit={true} style={getStartedStyles.optionNumText}>
             {optionNum}
@@ -100,7 +100,7 @@ const getStartedStyles = StyleSheet.create({
   },
   subtitle: {
     ...typeScale.labelXXSmall,
-    color: colors.gray3,
+    color: colors.textSecondary,
   },
   title: {
     ...typeScale.labelMedium,
@@ -115,7 +115,6 @@ const getStartedStyles = StyleSheet.create({
   },
   optionNumText: {
     ...typeScale.labelXSmall,
-    color: colors.black,
   },
   optionText: {
     paddingLeft: Spacing.Smallest8,
@@ -128,7 +127,7 @@ const getStartedStyles = StyleSheet.create({
   },
   optionSubtitle: {
     ...typeScale.bodyXSmall,
-    color: colors.gray3,
+    color: colors.textSecondary,
   },
 })
 
@@ -380,7 +379,7 @@ const styles = StyleSheet.create({
   },
   searchResultsHeader: {
     ...typeScale.labelXSmall,
-    color: colors.gray3,
+    color: colors.textSecondary,
     paddingHorizontal: Spacing.Regular16,
     paddingVertical: Spacing.Smallest8,
   },
@@ -391,12 +390,12 @@ const styles = StyleSheet.create({
   },
   noResultsTitle: {
     ...typeScale.bodyMedium,
-    color: colors.gray3,
+    color: colors.textSecondary,
     textAlign: 'center',
   },
   noResultsSubtitle: {
     ...typeScale.labelXSmall,
-    color: colors.gray3,
+    color: colors.textSecondary,
     justifyContent: 'center',
     padding: Spacing.Regular16,
     textAlign: 'center',

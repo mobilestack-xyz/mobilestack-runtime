@@ -4,24 +4,15 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 import { background } from 'src/images/Images'
 import Logo from 'src/images/Logo'
 import { nuxNavigationOptionsNoBackButton } from 'src/navigator/Headers'
+import { navigate } from 'src/navigator/NavigationService'
 import { Screens } from 'src/navigator/Screens'
-import { goToNextOnboardingScreen, onboardingPropsSelector } from 'src/onboarding/steps'
-import { useSelector } from 'src/redux/hooks'
 import colors from 'src/styles/colors'
 import { typeScale } from 'src/styles/fonts'
 import { Spacing } from 'src/styles/styles'
 
 function OnboardingSuccessScreen() {
-  const onboardingProps = useSelector(onboardingPropsSelector)
   useEffect(() => {
-    const timeout = setTimeout(
-      () =>
-        goToNextOnboardingScreen({
-          firstScreenInCurrentStep: Screens.VerificationStartScreen,
-          onboardingProps,
-        }),
-      3000
-    )
+    const timeout = setTimeout(() => navigate(Screens.ChooseYourAdventure), 3000)
 
     return () => clearTimeout(timeout)
   }, [])
@@ -31,7 +22,7 @@ function OnboardingSuccessScreen() {
   return (
     <View style={styles.container}>
       <Image source={background} style={styles.backgroundImage} />
-      <Logo color={colors.white} size={70} />
+      <Logo color={colors.textInverse} size={70} />
       <Text style={styles.text}>{t('success.message')}</Text>
     </View>
   )
@@ -55,7 +46,7 @@ const styles = StyleSheet.create({
     ...typeScale.titleSmall,
     fontSize: 30,
     lineHeight: 36,
-    color: colors.white,
+    color: colors.textInverse,
     marginTop: Spacing.Regular16,
     marginBottom: 30,
     shadowOffset: { width: 0, height: 1 },

@@ -66,9 +66,12 @@ export function SettingsItemTextValue({
             </Text>
           )}
           {(!!value || showChevron) && (
-            <ForwardChevron height={12} color={isValueActionable ? colors.accent : colors.gray3} />
+            <ForwardChevron
+              height={12}
+              color={isValueActionable ? colors.accent : colors.textSecondary}
+            />
           )}
-          {isExternalLink && <OpenLinkIcon size={16} color={colors.black} />}
+          {isExternalLink && <OpenLinkIcon size={16} color={colors.textPrimary} />}
         </View>
       </View>
     </Wrapper>
@@ -144,7 +147,7 @@ export function SettingsItemInput({
   placeholder,
 }: SettingsItemInputProps) {
   const onFocus = () => {
-    setInputColor(colors.black)
+    setInputColor(colors.textPrimary)
   }
   const onBlur = () => {
     setInputColor(colors.gray4)
@@ -189,7 +192,7 @@ export function SettingsItemCta({
       <View style={styles.container}>
         <Title value={title} />
         <View style={styles.right}>{cta}</View>
-        {showChevron && <ForwardChevron height={12} color={colors.gray3} />}
+        {showChevron && <ForwardChevron height={12} color={colors.textSecondary} />}
       </View>
     </Wrapper>
   )
@@ -207,7 +210,6 @@ const styles = StyleSheet.create({
   },
   title: {
     ...typeScale.bodyMedium,
-    color: colors.black,
   },
   value: {
     ...typeScale.bodyMedium,

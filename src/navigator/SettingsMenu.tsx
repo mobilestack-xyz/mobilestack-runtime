@@ -20,11 +20,12 @@ import { sessionIdSelector, walletConnectEnabledSelector } from 'src/app/selecto
 import GradientBlock from 'src/components/GradientBlock'
 import { SettingsItemTextValue } from 'src/components/SettingsItem'
 import Touchable from 'src/components/Touchable'
+import { STATSIG_ENABLED } from 'src/config'
+import Help from 'src/icons/Help'
 import Lock from 'src/icons/Lock'
+import Wallet from 'src/icons/navigator/Wallet'
 import Preferences from 'src/icons/Preferences'
 import Stack from 'src/icons/Stack'
-import Help from 'src/icons/navigator/Help'
-import Wallet from 'src/icons/navigator/Wallet'
 import MSLogoFull from 'src/images/MSLogoFull'
 import { headerWithCloseButton } from 'src/navigator/Headers'
 import { navigate } from 'src/navigator/NavigationService'
@@ -85,7 +86,7 @@ export default function SettingsMenu() {
     if (!devModeActive) {
       return null
     } else {
-      const statsigStableId = Statsig.getStableID()
+      const statsigStableId = STATSIG_ENABLED ? Statsig.getStableID() : 'statsig-not-enabled'
       return (
         <View style={styles.devSettings}>
           <Touchable onPress={onCopyText(sessionId)} style={styles.devSettingsItem}>
@@ -113,7 +114,7 @@ export default function SettingsMenu() {
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <SettingsItemTextValue
-          icon={<Wallet size={24} color={Colors.black} />}
+          icon={<Wallet size={24} color={Colors.textPrimary} />}
           title={t('address')}
           onPress={() =>
             navigate(Screens.QRNavigator, {
@@ -126,7 +127,7 @@ export default function SettingsMenu() {
           borderless
         />
 
-        <GradientBlock style={styles.divider} colors={[Colors.black, Colors.black]} />
+        <GradientBlock style={styles.divider} colors={[Colors.shadow, Colors.shadow]} />
 
         <SettingsItemTextValue
           icon={<Preferences size={24} />}
@@ -137,7 +138,7 @@ export default function SettingsMenu() {
           borderless
         />
         <SettingsItemTextValue
-          icon={<Lock width={24} height={24} color={Colors.black} />}
+          icon={<Lock width={24} height={24} color={Colors.textPrimary} />}
           title={t('securityPrivacy')}
           testID="SettingsMenu/Security"
           onPress={() => navigate(Screens.SecuritySubmenu)}
@@ -146,7 +147,7 @@ export default function SettingsMenu() {
         />
         {walletConnectEnabled && (
           <SettingsItemTextValue
-            icon={<Stack size={24} color={Colors.black} />}
+            icon={<Stack size={24} color={Colors.textPrimary} />}
             title={t('connectedApplications')}
             testID="SettingsMenu/ConnectedDapps"
             value={connectedDapps.toString()}
@@ -156,7 +157,7 @@ export default function SettingsMenu() {
           />
         )}
         <SettingsItemTextValue
-          icon={<Help size={24} color={Colors.black} />}
+          icon={<Help size={24} color={Colors.textPrimary} />}
           title={t('help')}
           onPress={() => navigate(Screens.Support)}
           testID="SettingsMenu/Help"
@@ -164,7 +165,7 @@ export default function SettingsMenu() {
           borderless
         />
 
-        <GradientBlock style={styles.divider} colors={[Colors.black, Colors.black]} />
+        <GradientBlock style={styles.divider} colors={[Colors.shadow, Colors.shadow]} />
 
         <SettingsItemTextValue
           title={t('legal')}
@@ -209,7 +210,7 @@ const styles = StyleSheet.create({
   },
   appVersionText: {
     ...typeScale.bodyMedium,
-    color: Colors.gray3,
+    color: Colors.textSecondary,
   },
   devSettings: {
     padding: Spacing.Regular16,

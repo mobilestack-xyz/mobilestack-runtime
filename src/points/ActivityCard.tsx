@@ -92,11 +92,10 @@ const styles = StyleSheet.create({
   },
   pointsAmount: {
     ...typeScale.labelXSmall,
-    color: Colors.black,
   },
   previousPointsAmount: {
     ...typeScale.labelXSmall,
-    color: Colors.gray3,
+    color: Colors.textSecondary,
     textDecorationLine: 'line-through',
   },
 })

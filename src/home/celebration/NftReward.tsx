@@ -55,7 +55,7 @@ export default function NftRewardBottomSheet() {
       }
     : {
         pillStyle: { backgroundColor: Colors.gray1 },
-        labelStyle: { color: Colors.black },
+        labelStyle: { color: Colors.textPrimary },
       }
 
   const copyText = isReminder ? 'rewardReminderBottomSheet' : 'rewardBottomSheet'
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   description: {
     marginTop: Spacing.Regular16,
     ...typeScale.bodySmall,
-    color: Colors.gray3,
+    color: Colors.textSecondary,
   },
   button: {
     marginTop: Spacing.XLarge48,
